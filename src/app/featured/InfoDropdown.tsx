@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 // type declaration for data info objects
@@ -9,10 +10,8 @@ interface MoreButtonProps {
 }
 
 const MoreButton = ({ id, title, description, address }: MoreButtonProps) => {
-  // - dropdown visibility state
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // - dropdown toggler 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
@@ -24,7 +23,7 @@ const MoreButton = ({ id, title, description, address }: MoreButtonProps) => {
       className="flex flex-col items-start gap-2 justify-self-center p-2 "
     >
       {/* show/hide button */}
-      <button onClick={toggleDropdown} className="rounded2 text-blue-400">
+      <button onClick={toggleDropdown} className="rounded2 text-blue-400 ">
         Ver mas
       </button>
       {/* shows dropdown if dropdown visibility is*/}

@@ -1,7 +1,7 @@
 export type InteractiveCardType = {
   image: string;
-  title: string;
-  body: string;
+  name: string;
+  description: string;
 };
 
 export type IconCardType = {

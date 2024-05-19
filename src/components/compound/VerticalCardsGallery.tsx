@@ -4,18 +4,14 @@ import InteractiveCard from "./InteractiveCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import useWindowWidth from "../../src/hooks/useWindowWidth";
+import useWindowWidth from "../../hooks/useWindowWidth";
+import { InteractiveCardType } from "@/types/cards";
 
-type CardProps = {
-  title: string;
-  body: string;
-  image: string;
-};
 
 export const VerticalCardsGallery = ({
   cardsContent,
 }: {
-  cardsContent: CardProps[];
+  cardsContent: InteractiveCardType[];
 }) => {
   const windowWidth = useWindowWidth();
 

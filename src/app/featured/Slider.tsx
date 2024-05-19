@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react"; // react functions
-// components
+"use client";
 import MoreButton from "./InfoDropdown"; // dropdown button more info
 import { Swiper, SwiperSlide } from "swiper/react"; // slider components
 import "swiper/css"; // style for sliders
-// media: icons
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-
 import Image from "next/image"; 
+import useWindowWidth from "./useWindowWidth";
 
 // --Type definition for the api data (to be used in the item state definition)
 type ItemType = {
@@ -22,28 +20,9 @@ interface Props {
 }
 
 // --- main component
-const MyComponent = ({ items }: Props) => {
-  // window width state definitions
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+const SliderComponent = ({ items }: Props) => {
+  const { windowWidth, setWindowWidth } = useWindowWidth(); // window width hook
 
-  // handles responsiveness of the slider
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    // Set initial window width
-    setWindowWidth(window.innerWidth);
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Remove event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []); // (Empty dependency array ensures this effect runs only once after component mount)
-
-  // --- returned slider component
   return (
     // wrapper for the content
     <div className="mt-9">
@@ -126,4 +105,4 @@ const MyComponent = ({ items }: Props) => {
   );
 };
 
-export default MyComponent;
+export default SliderComponent;

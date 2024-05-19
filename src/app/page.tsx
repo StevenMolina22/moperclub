@@ -1,14 +1,14 @@
 // Sections of the app page
-import Hero from "../src/pages/Home/Hero";
+import Hero from "../src/pages/Hero";
 import Banner from "@/components/layout/Banner";
 import Featured from "./featured/FeaturedSection";
 import Events from "./events/Events";
-import PersonalMenu from "../src/pages/Home/PersonalMenu";
+import PersonalMenu from "./(routes)/home/PersonalMenu";
 import Articles from "./articles/Articles";
 import Footer from "../components/layout/Footer";
 import Inspiration from "./(routes)/home/Inspiration";
 import Places from "./places/Places";
-import { FloatingSocialLinks } from "../src/components/Features/FloatingSocialLinks";
+import { FloatingSocialLinks } from "../components/compound/FloatingSocialLinks";
 
 // main app
 function Home() {
@@ -37,7 +37,8 @@ function Home() {
           optio autem.
         </p>
       </div>
-      {/* <Places /> */}
+      <Events />
+      <Places />
       {/* <Articles /> */}
       <PersonalMenu />
       <h2 className="my-6 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-5xl">

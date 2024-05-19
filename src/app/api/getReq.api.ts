@@ -1,7 +1,8 @@
 import axios from "axios";
 
-export const getAllItems = (endpoint: string) => {
-  const baseURL = process.env.VITE_BACKEND_URL // uses vite env vars (adaptable to vercel or local)
-  const res = axios.get(baseURL+endpoint)
-  return res
+export async function getAllItems (endpoint: string) {
+  const baseURL = "https://moperclub-server.vercel.app"
+  // const baseURL = process.env.BACKEND_URL // uses vite env vars (adaptable to vercel or local)
+  const response = await axios.get(baseURL+endpoint)
+  return response.data
 }

@@ -1,4 +1,4 @@
-import ShowcasePanel from "../../../components/layout/ShowcasePanel";
+import ShowcasePanel from "@/components/layout/ShowcasePanel";
 import {
   CloudArrowUpIcon,
   LockClosedIcon,

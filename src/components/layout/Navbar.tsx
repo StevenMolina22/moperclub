@@ -7,6 +7,8 @@ import { SearchBar } from "../compose/SearchBar";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import SignInButton from "@/app/auth/SignInButton";
+import SignupButton from "@/app/auth/SignupButton";
 
 const navLinks = [
   { label: "Inicio", path: "/" },
@@ -67,8 +69,9 @@ export default function Navbar() {
         <div className="hidden lg:inline-block">
           <div className="flex gap-2">
             <SearchBar />
-            <Button variant={"secondary"}>Sign in</Button>
-            <Button variant={"destructive"}>Sign up</Button>
+            <SignInButton/>
+            <SignupButton/>
+            
           </div>
         </div>
       </nav>

@@ -14,11 +14,9 @@ export async function sendPostRequest<T>(endpoint = "", data = {}): Promise<Resp
     body: JSON.stringify(data),
   });
 
-  const responseData: Response<T> = {
+  return {
     data: await response.json(),
     status: response.status,
     statusText: response.statusText,
   };
-
-  return responseData;
 }
