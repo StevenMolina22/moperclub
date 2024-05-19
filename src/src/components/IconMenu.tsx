@@ -1,4 +1,4 @@
-import { IconCard } from "../Common/Cards/IconCard";
+import { IconCard } from "../../../components/compound/IconCard";
 import { IconCardType } from "@/types/cards";
 
 // icon menu props type definition
