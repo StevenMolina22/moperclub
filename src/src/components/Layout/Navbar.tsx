@@ -1,19 +1,19 @@
-"use client"
-import React, { useState } from "react";
-import { FaEllipsisVertical } from "react-icons/fa6";
-import { MdClose } from "react-icons/md";
-import { Bars3Icon } from "@heroicons/react/24/outline";
-import { SearchBar } from "../compose/SearchBar";
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "../ui/button";
+import React, { useState } from 'react';
+import { FaEllipsisVertical } from 'react-icons/fa6';
+import { MdClose } from 'react-icons/md';
+import { Bars3Icon } from '@heroicons/react/24/outline';
+import logo from '../../assets/img/logotipo.png';
+import SignInButton from '../Common/Buttons/SignInButton';
+import SignupButton from '../Common/Buttons/SignupButton';
+import { SearchBar } from '../Utilities/SearchBar';
+import { NavLink } from 'react-router-dom';
 
 const navLinks = [
-  { label: "Inicio", path: "/" },
-  { label: "Sobre Nosotros", path: "/about" },
-  { label: "Recomendaciones", path: "/recommended" },
-  { label: "Productos", path: "/store" },
-  { label: "Blog", path: "/blog" },
+  { label: 'Inicio', path: '/' },
+  { label: 'Sobre Nosotros', path: '/about' },
+  { label: 'Recomendaciones', path: '/recommended' },
+  { label: 'Productos', path: '/store' },
+  { label: 'Blog', path: '/blog' },
 ];
 
 export default function Navbar() {
@@ -26,11 +26,11 @@ export default function Navbar() {
   return (
     <div>
       {/* Desktop Navbar */}
-      <nav className="relative flex items-center justify-between bg-transparent px-4 py-4">
+      <nav className="bg-transparent relative flex items-center justify-between px-4 py-4">
         {/* Logo */}
-        <Link href="/" className="text-3xl font-bold leading-none">
-          <Image height={32} width={144} src="/logotipo.png" alt="Logo" />
-        </Link>
+        <NavLink to="/" className="text-3xl font-bold leading-none">
+          <img style={{ height: '32px' }} src={logo} alt="Logo" />
+        </NavLink>
 
         {/* Hamburger menu */}
         <div className="lg:hidden">
@@ -47,12 +47,12 @@ export default function Navbar() {
           {navLinks.map((link, index) => (
             <React.Fragment key={link.path}>
               <li>
-                <Link
-                  href={link.path}
+                <NavLink
+                  to={link.path}
                   className="text-sm text-gray-400 hover:font-bold hover:text-red-600 "
                 >
                   {link.label}
-                </Link>
+                </NavLink>
               </li>
               {index !== navLinks.length - 1 && (
                 <li className="text-gray-300">
@@ -67,8 +67,8 @@ export default function Navbar() {
         <div className="hidden lg:inline-block">
           <div className="flex gap-2">
             <SearchBar />
-            <Button variant={"secondary"}>Sign in</Button>
-            <Button variant={"destructive"}>Sign up</Button>
+            <SignInButton />
+            <SignupButton />
           </div>
         </div>
       </nav>
@@ -83,12 +83,12 @@ export default function Navbar() {
           <nav className="fixed bottom-0 left-0 top-0 flex w-5/6 max-w-sm flex-col overflow-y-auto border-r bg-gray-800 px-6 py-6">
             {/* Visible items */}
             <div className="mb-8 flex items-center">
-              <Link
-                href="/"
+              <NavLink
+                to="/"
                 className="mr-auto text-3xl font-bold leading-none"
               >
-                  <Image height={24} src="/logotipo.png" alt="Logo" />
-              </Link>
+                <img style={{ height: '24px' }} src={logo} alt="Logo" />
+              </NavLink>
               <button onClick={toggleNavbar} className="navbar-close">
                 <MdClose className="text-3xl text-slate-500" />
               </button>
@@ -99,12 +99,12 @@ export default function Navbar() {
               <ul>
                 {navLinks.map((link) => (
                   <li key={link.path} className="mb-1">
-                    <Link
-                      href={link.path}
+                    <NavLink
+                      to={link.path}
                       className="block rounded p-4 text-sm font-semibold text-gray-400 hover:bg-gray-700 hover:text-blue-600"
                     >
                       {link.label}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
@@ -113,8 +113,8 @@ export default function Navbar() {
             {/* Authentication buttons (hidden) */}
             <div className="mt-auto">
               <div className="flex flex-col gap-3 pt-6">
-                <Button>Sign in</Button>
-                <Button>Sign up</Button>
+                <SignInButton />
+                <SignupButton />
               </div>
               <p className="my-4 text-center text-xs text-gray-400">
                 <span>Copyright © 2021</span>

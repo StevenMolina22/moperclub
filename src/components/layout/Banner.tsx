@@ -19,8 +19,7 @@ export default function Banner({ bgImage, titleText, subtitleText }: Props) {
       {/* Home/Banner section wrapper*/}
       <section className="home-page h-screen" style={bgImageStyle}>
         <div className="banner__img-overlay w-full h-screen absolute bg-black/60"></div>
-        {/* opacity img */}
-        {/* Navbar component: (for it to be transparent and show bg image) */}
+        {/* Navbar component*/}
         <Navbar />
         {/* Baner centered elements/ Call to action */}
         <div className="fluid-container banner flex justify-center items-center w-full h-screen ">

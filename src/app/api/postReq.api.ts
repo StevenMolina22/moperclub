@@ -1,0 +1,24 @@
+// api/postReq.api.ts
+export interface Response<T> {
+  data: T;
+  status: number;
+  statusText: string;
+}
+
+export async function sendPostRequest<T>(endpoint = "", data = {}): Promise<Response<T>> {
+  const baseURL = process.env.BACKEND_URL; // uses Vite env_vars (production or local)
+
+  const response = await fetch(baseURL + endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  const responseData: Response<T> = {
+    data: await response.json(),
+    status: response.status,
+    statusText: response.statusText,
+  };
+
+  return responseData;
+}
