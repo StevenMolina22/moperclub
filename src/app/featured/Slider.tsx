@@ -23,6 +23,10 @@ interface Props {
 const SliderComponent = ({ items }: Props) => {
   const { windowWidth, setWindowWidth } = useWindowWidth(); // window width hook
 
+  if (windowWidth === null) {
+    return null; // Render nothing or a loader until windowWidth is available
+  }
+  
   return (
     // wrapper for the content
     <div className="mt-9">

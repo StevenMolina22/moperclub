@@ -6,14 +6,30 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import useWindowWidth from "../../hooks/useWindowWidth";
 import { InteractiveCardType } from "@/types/cards";
-
+import { useEffect, useState } from "react";
 
 export const VerticalCardsGallery = ({
   cardsContent,
 }: {
   cardsContent: InteractiveCardType[];
 }) => {
-  const windowWidth = useWindowWidth();
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+
+      handleResize(); // Set initial width
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
+  if (windowWidth === null) {
+    return null; // Render nothing until window width is set
+  }
 
   return (
     <>

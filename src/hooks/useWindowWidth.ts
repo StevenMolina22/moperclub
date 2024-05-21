@@ -1,5 +1,4 @@
 "use client";
-// useWindowWidth.ts
 import { useState, useEffect } from "react";
 
 const useWindowWidth = () => {

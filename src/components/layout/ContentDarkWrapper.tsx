@@ -1,5 +1,3 @@
-import React from "react";
-
 // interactive cards props type declaration
 interface Props {
   title?: string;

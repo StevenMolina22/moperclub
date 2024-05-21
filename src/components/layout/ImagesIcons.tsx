@@ -33,7 +33,7 @@ export default function ImagesIcons({ articles }: Props) {
                 height={224}
                 width={224}
                 alt="article image"
-                className="extra-videos__video w-[14rem] rounded-xl object-cover"
+                className="extra-videos__video w-[14rem] h-[14rem] rounded-xl object-cover"
                 src={article.image}
               />
               <h4 className="text-lg font-medium">{article.title}</h4>

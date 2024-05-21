@@ -1,9 +1,14 @@
-"use client";
 import ImagesIcons from "../../components/layout/ImagesIcons";
-import useArticles from "./useArticles";
+import { getAllItems } from "../api/getReqNew.api";
 
-function Articles() {
-  const { articles } = useArticles();
+type ArticlesType = {
+  title: string;
+  image: string;
+};
+
+async function Articles() {
+  const articles: ArticlesType[] = await getAllItems("/blog/api/posts/");
+  
   return <ImagesIcons articles={articles} />;
 }
 
