@@ -3,7 +3,7 @@ import MoreButton from "./InfoDropdown"; // dropdown button more info
 import { Swiper, SwiperSlide } from "swiper/react"; // slider components
 import "swiper/css"; // style for sliders
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import Image from "next/image"; 
+import Image from "next/image";
 import useWindowWidth from "./useWindowWidth";
 
 // --Type definition for the api data (to be used in the item state definition)
@@ -26,14 +26,14 @@ const SliderComponent = ({ items }: Props) => {
   if (windowWidth === null) {
     return null; // Render nothing or a loader until windowWidth is available
   }
-  
+
   return (
     // wrapper for the content
     <div className="mt-9">
       {/* title text and message */}
       <div className="text-center">
         <h2 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-          Solo Sorprendete
+          Solo Sorprendete{" "}
         </h2>
         <p className="mb-6 text-lg font-normal text-gray-500 sm:px-16 lg:text-xl xl:px-48">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -81,7 +81,7 @@ const SliderComponent = ({ items }: Props) => {
           <Image
             height={380}
             width={670}
-            className="h-[380px] rounded-2xl lg:h-[670px] w-auto"
+            className="h-[380px] w-auto rounded-2xl lg:h-[670px]"
             src="https://images.unsplash.com/photo-1707789045435-971e848a914b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="z"
           />
@@ -90,7 +90,7 @@ const SliderComponent = ({ items }: Props) => {
           <Image
             height={380}
             width={670}
-            className="h-[380px] rounded-2xl lg:h-[670px] w-auto"
+            className="h-[380px] w-auto rounded-2xl lg:h-[670px]"
             src="https://images.unsplash.com/photo-1708086504310-134d8c4005f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
@@ -99,7 +99,7 @@ const SliderComponent = ({ items }: Props) => {
           <Image
             height={380}
             width={670}
-            className="h-[380px] rounded-2xl lg:h-[670px] w-auto"
+            className="h-[380px] w-auto rounded-2xl lg:h-[670px]"
             src="https://images.unsplash.com/photo-1707789045435-971e848a914b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="z"
           />

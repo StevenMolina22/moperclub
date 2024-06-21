@@ -1,5 +1,5 @@
 import ImagesIcons from "../../components/layout/ImagesIcons";
-import { getAllItems } from "../api/getReqNew.api";
+// import { getAllItems } from "../api/getReqNew.api";
 
 type ArticlesType = {
   title: string;
@@ -7,9 +7,11 @@ type ArticlesType = {
 };
 
 async function Articles() {
-  const articles: ArticlesType[] = await getAllItems("/blog/api/posts/");
-  
-  return <ImagesIcons articles={articles} />;
+  // const articles: ArticlesType[] = await getAllItems("/blog/api/posts/");
+
+  // return <ImagesIcons articles={articles} />;
+  return <ImagesIcons articles={[]} />;
+  // return <div>Articles</div>
 }
 
 export default Articles;
