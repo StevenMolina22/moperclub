@@ -5,7 +5,7 @@ import Events from "./events/Events";
 import PersonalMenu from "./(routes)/home/PersonalMenu";
 import Articles from "./articles/Articles";
 import Footer from "../components/layout/Footer";
-import Inspiration from "./(routes)/home/Inspiration";
+import InspirationPage from "./(routes)/home/Inspiration";
 import Places from "./places/Places";
 
 // main app
@@ -20,7 +20,7 @@ function Home() {
         subtitleText="Experiencias Inolvidables"
       />
       <Featured />
-      <Inspiration />
+      <InspirationPage />
       <div className=" text-center">
         <h2 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
           Disfruta de verdad con{" "}

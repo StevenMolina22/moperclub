@@ -71,7 +71,7 @@ export default function Navbar() {
             <SearchBar />
             <SignInButton/>
             <SignupButton/>
-            
+
           </div>
         </div>
       </nav>
@@ -80,7 +80,7 @@ export default function Navbar() {
       {isNavbarOpen && (
         <div className="navbar-menu relative z-50">
           <div
-            className="navbar-backdrop fixed inset-0 bg-gray-900 opacity-25"
+            className="navbar-backdrop fixed inset-0 bg-gray-900 opacity-80"
             onClick={toggleNavbar}
           />
           <nav className="fixed bottom-0 left-0 top-0 flex w-5/6 max-w-sm flex-col overflow-y-auto border-r bg-gray-800 px-6 py-6">

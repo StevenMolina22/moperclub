@@ -1,5 +1,5 @@
 "use client";
-import Navbar from "@/components/layout/Navbar";
+import CustomNavbar from "@/components/layout/CustomNavbar";
 import Footer from "@/components/layout/Footer";
 import EventCard from "@/app/events/EventCard";
 import { getAllItems } from "@/app/api/getReq.api";
@@ -45,7 +45,7 @@ export default function Recommended() {
 
   return (
     <>
-      <Navbar />
+      <CustomNavbar />
       <div className="mb-5 text-center text-4xl font-semibold ">
         Recommended
       </div>

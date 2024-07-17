@@ -5,18 +5,14 @@ import { FaDiscord, FaTwitter, FaGithub } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 
 export default function Footer(): JSX.Element {
-  // Manage input state for the email form
-  const [formInput, setFormInput] = useState<string>("");
+  const [formInput, setFormInput] = useState("");
 
   // Handle form submission
   const handleForm = () => {
-    // Alert the form value when submitted
     alert(formInput + " the submit was a success");
   };
 
-  // --- returned footer component
   return (
-    // Footer Wrapper
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">

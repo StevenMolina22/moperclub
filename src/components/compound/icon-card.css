@@ -1,0 +1,55 @@
+/* Estilo principal para el item especifico de menu personal */
+.personal-menu__card {
+  background-color: #22242e;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.personal-menu__card:hover {
+  height: 270px;
+}
+
+/* Contenedor de iconos en el menu personal */
+.info-icon {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80px;
+  height: 80px;
+  color: white;
+  background: linear-gradient(90deg, #f39200 0%, #ef1073 40%, rgba(0, 0, 0, 0.28) 60%);
+  transition: all 0.8s ease;
+  background-position: 0px;
+  background-size: 200px;
+}
+
+.personal-menu__card:hover .info-icon {
+  background-position: -120px;
+  transition: all 0.3s ease;
+}
+
+.personal-menu__card:hover .info-icon i {
+  background: linear-gradient(90deg, #f39200, #ef1073);
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+/* Título del card */
+.personal-menu__title {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* Texto del card */
+.personal-menu__text {
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.personal-menu__card:hover .personal-menu__text {
+  opacity: 1;
+  max-height: 40px;
+}

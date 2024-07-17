@@ -16,8 +16,6 @@ export default function Banner({ bgImage, titleText, subtitleText }: Props) {
   };
   // returned component
   return (
-    <>
-      {/* Home/Banner section wrapper*/}
       <section className="home-page h-screen" style={bgImageStyle}>
         <div className="banner__img-overlay w-full h-screen absolute bg-black/60"></div>
         {/* Navbar component*/}
@@ -31,6 +29,5 @@ export default function Banner({ bgImage, titleText, subtitleText }: Props) {
           </div>
         </div>
       </section>
-    </>
   );
 }

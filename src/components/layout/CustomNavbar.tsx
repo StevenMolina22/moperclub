@@ -18,16 +18,11 @@ export default function NavbarLayout() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    {name: "Home", link: "/"},
+    {name: "About us", link: "/aboutus"},
+    {name: "Blog", link: "/blog"},
+    {name: "Contact", link: "/contact"},
+    {name: "Store", link: "/store"},
   ];
 
   return (
@@ -36,7 +31,7 @@ export default function NavbarLayout() {
       shouldHideOnScroll
       isBordered
       isBlurred={false}
-      className={isMenuOpen ? "bg-black/50" : "bg-transparent"}
+      className={isMenuOpen ? "bg-black/90" : "bg-transparent"}
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -52,7 +47,7 @@ export default function NavbarLayout() {
       </NavbarContent>
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         <NavbarItem isActive>
-          <Link className="text-gray-300" color="foreground" href="/about">
+          <Link className="text-gray-300" color="foreground" href="/">
             Home
           </Link>
         </NavbarItem>
@@ -88,7 +83,7 @@ export default function NavbarLayout() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu className="bg-black/50">
+      <NavbarMenu className="bg-black/90">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
@@ -100,10 +95,10 @@ export default function NavbarLayout() {
                     : "foreground"
               }
               className="w-full text-white"
-              href="#"
+              href={item.link}
               size="lg"
             >
-              {item}
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}

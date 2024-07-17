@@ -25,7 +25,6 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                   className="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
                 >
                   <span className="sr-only">Close panel</span>
-                  {/* Heroicon name: outline/x */}
                   <svg
                     className="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
@@ -49,28 +48,24 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                     href="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
                   >
-                    {/* Your icon */}
                     <span className="ml-3">Home</span>
                   </a>
                   <a
                     href="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
                   >
-                    {/* Your icon */}
                     <span className="ml-3">About</span>
                   </a>
                   <a
                     href="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
                   >
-                    {/* Your icon */}
                     <span className="ml-3">Blog</span>
                   </a>
                   <a
                     href="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
                   >
-                    {/* Your icon */}
                     <span className="ml-3">Contact</span>
                   </a>
                 </nav>
