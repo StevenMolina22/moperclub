@@ -46,7 +46,7 @@ export default function NavbarLayout() {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
-        <NavbarItem isActive>
+        {/* <NavbarItem isActive>
           <Link className="text-gray-300" color="foreground" href="/">
             Home
           </Link>
@@ -70,7 +70,7 @@ export default function NavbarLayout() {
           <Link className="text-gray-300" color="foreground" href="store">
             Store
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex ">

@@ -13,7 +13,7 @@ import SignupButton from "@/app/auth/SignupButton";
 const navLinks = [
   { label: "Inicio", path: "/" },
   { label: "Sobre Nosotros", path: "/about" },
-  { label: "Recomendaciones", path: "/recommended" },
+  // { label: "Recomendaciones", path: "/recommended" },
   { label: "Productos", path: "/store" },
   { label: "Blog", path: "/blog" },
 ];
@@ -46,7 +46,7 @@ export default function Navbar() {
 
         {/* Navigation links */}
         <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform lg:mx-auto lg:flex lg:w-auto lg:items-center lg:space-x-6">
-          {navLinks.map((link, index) => (
+          {/* {navLinks.map((link, index) => (
             <React.Fragment key={link.path}>
               <li>
                 <Link
@@ -62,7 +62,7 @@ export default function Navbar() {
                 </li>
               )}
             </React.Fragment>
-          ))}
+          ))} */}
         </ul>
 
         {/* Search & Authentication */}
@@ -99,7 +99,7 @@ export default function Navbar() {
 
             {/* Hidden items */}
             <div>
-              <ul>
+              {/* <ul>
                 {navLinks.map((link) => (
                   <li key={link.path} className="mb-1">
                     <Link
@@ -110,7 +110,7 @@ export default function Navbar() {
                     </Link>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
 
             {/* Authentication buttons (hidden) */}
