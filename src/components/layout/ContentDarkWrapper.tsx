@@ -3,9 +3,10 @@ interface Props {
   title?: string;
   subtitle?: string;
   displayedComponent: React.ReactNode;
+  children?: React.ReactNode;
 }
 
-export default function ContentDarkWrapper({ title = "", subtitle = "", displayedComponent }: Props) {
+export default function ContentDarkWrapper({ title = "", subtitle = "", displayedComponent, children }: Props) {
   return (
     <div className="mt-6 bg-slate-900 py-6">
       {/* title text */}
@@ -16,6 +17,7 @@ export default function ContentDarkWrapper({ title = "", subtitle = "", displaye
         {subtitle}
       </h3>
       {displayedComponent}
+      {children}
     </div>
   );
 }
