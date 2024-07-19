@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { FaEllipsisVertical } from "react-icons/fa6";
 import { MdClose } from "react-icons/md";
@@ -69,9 +69,8 @@ export default function Navbar() {
         <div className="hidden lg:inline-block">
           <div className="flex gap-2">
             <SearchBar />
-            <SignInButton/>
-            <SignupButton/>
-
+            <SignInButton />
+            <SignupButton />
           </div>
         </div>
       </nav>
@@ -90,7 +89,7 @@ export default function Navbar() {
                 href="/"
                 className="mr-auto text-3xl font-bold leading-none"
               >
-                  <Image height={24} src="/logotipo.png" alt="Logo" />
+                <Image height={24} src="/logotipo.png" alt="Logo" />
               </Link>
               <button onClick={toggleNavbar} className="navbar-close">
                 <MdClose className="text-3xl text-slate-500" />

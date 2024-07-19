@@ -13,16 +13,15 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 
-
 export default function NavbarLayout() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    {name: "Home", link: "/"},
-    {name: "About us", link: "/aboutus"},
-    {name: "Blog", link: "/blog"},
-    {name: "Contact", link: "/contact"},
-    {name: "Store", link: "/store"},
+    { label: "Home", link: "/", isActive: true },
+    { label: "About us", link: "/aboutus", isActive: false },
+    { label: "Blog", link: "/blog", isActive: false },
+    { label: "Contact", link: "/contact", isActive: false },
+    { label: "Store", link: "/store", isActive: false },
   ];
 
   return (
@@ -30,22 +29,29 @@ export default function NavbarLayout() {
       onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll
       isBordered
+      disableAnimation
       isBlurred={false}
       className={isMenuOpen ? "bg-black/90" : "bg-transparent"}
     >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden text-white"
+          className="text-white sm:hidden"
         />
         <NavbarBrand>
           <LogoComponent />
-          <div className="flex flex-col font-bold text-inherit">
-
-          </div>
+          <div className="flex flex-col font-bold text-inherit"></div>
         </NavbarBrand>
       </NavbarContent>
+      {/* Desktop Links */}
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+        {menuItems.map((item, idx) => (
+          <NavbarItem key={idx} isActive={item.isActive}>
+            <Link className="text-gray-300" color="foreground" href={item.link}>
+              {item.label}
+            </Link>
+          </NavbarItem>
+        ))}
         {/* <NavbarItem isActive>
           <Link className="text-gray-300" color="foreground" href="/">
             Home
@@ -73,16 +79,25 @@ export default function NavbarLayout() {
         </NavbarItem> */}
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex ">
-          <Link className="text-gray-300" href="#">Login</Link>
+        <NavbarItem className="">
+          <Link className="text-background hover:underline" href="#">
+            Login
+          </Link>
         </NavbarItem>
         <NavbarItem>
-          <Button className="text-gray-200" as={Link} color="primary" href="#" variant="flat">
+          <Button
+            className="text-background hover:text-foreground"
+            as={Link}
+            color="default"
+            href="#"
+            variant="ghost"
+          >
             Sign Up
           </Button>
         </NavbarItem>
       </NavbarContent>
 
+      {/* Responsive links */}
       <NavbarMenu className="bg-black/90">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
@@ -98,7 +113,7 @@ export default function NavbarLayout() {
               href={item.link}
               size="lg"
             >
-              {item.name}
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
@@ -106,7 +121,6 @@ export default function NavbarLayout() {
     </Navbar>
   );
 }
-
 
 const LogoComponent = () => (
   <Link href="/" className="text-3xl font-bold leading-none">

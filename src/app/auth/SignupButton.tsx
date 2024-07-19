@@ -9,7 +9,7 @@ const SignupButton = () => {
 
   const handleClick = () => {
     setOpenPopup(true);
-  }
+  };
   return (
     <div className="lg:inline-block">
       <div>
@@ -19,7 +19,9 @@ const SignupButton = () => {
         >
           Sign Up
         </button> */}
-        <Button onClick={handleClick} variant={"destructive"}>Sign Up</Button>
+        <Button onClick={handleClick} variant={"destructive"}>
+          Sign Up
+        </Button>
       </div>
       {/* openpopup is boolean and handle remove popup is a function */}
       <SignupForm isPopupOpened={isPopupVisible} closePopUp={closePopup} />

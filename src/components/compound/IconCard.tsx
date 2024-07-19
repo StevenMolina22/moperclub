@@ -17,10 +17,10 @@ export const IconCard = ({ title, body, icon }: Props) => {
       <div className="info-icon flex items-center justify-center rounded-full">
         <i className="material-icons md-36 text-4xl">{icon}</i>
       </div>
-      <p className="personal-menu__title w-4/5 text-center text-white font-semibold mt-8">
+      <p className="personal-menu__title mt-8 w-4/5 text-center font-semibold text-white">
         {title}
       </p>
-      <p className="personal-menu__text w-4/5 text-center text-xs text-white font-extralight mt-5">
+      <p className="personal-menu__text mt-5 w-4/5 text-center text-xs font-extralight text-white">
         {body}
       </p>
     </div>

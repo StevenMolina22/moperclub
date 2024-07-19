@@ -16,19 +16,20 @@ export function SearchBar() {
     // null type check
     if (searchInput instanceof HTMLElement) {
       searchInput.classList.toggle("hidden");
-    }};
+    }
+  };
   // return value
   return (
     <div className="flex items-center gap-2">
       <input
         onInput={handleSearch}
         id="searchBarInput"
-        className="hidden rounded-2xl p-2 text-gray-900 text-sm"
+        className="hidden rounded-2xl p-2 text-sm text-gray-900"
         type="text"
         placeholder="Search.."
       />
       <button onClick={showSearch} id="searchButton">
-        <MagnifyingGlassIcon className=" w-6 h-6 text-white" />
+        <MagnifyingGlassIcon className=" h-6 w-6 text-white" />
       </button>
       {/* <div>The thing you searched:</div>
       <div id="searchContent"></div> */}

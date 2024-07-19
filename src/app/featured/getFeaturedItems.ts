@@ -20,9 +20,7 @@ const getFeaturedItems = async () => {
       endpoints.map((server) => getAllItems<ItemType[]>(server)),
     );
 
-    const mergedData: ItemType[] = responses.flatMap(
-      (response) => response,
-    );
+    const mergedData: ItemType[] = responses.flatMap((response) => response);
 
     const featuredItems = mergedData.filter((item) => item.is_featured);
 

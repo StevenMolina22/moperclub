@@ -27,4 +27,3 @@ type DBEvent = {
   is_featured: boolean;
   category_id: number;
 };
-

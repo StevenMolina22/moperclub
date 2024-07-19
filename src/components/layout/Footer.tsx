@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaDiscord, FaTwitter, FaGithub } from "react-icons/fa";
@@ -113,11 +113,11 @@ export default function Footer(): JSX.Element {
           </div>
         </div>
 
-        <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
+        <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
 
         {/* ------- COPYRIGHT SECTION & SOCIAL ICONS ------- */}
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
             © 2023{" "}
             <a href="https://flowbite.com/" className="hover:underline">
               Moperclub™

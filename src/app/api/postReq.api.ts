@@ -5,7 +5,10 @@ export interface Response<T> {
   statusText: string;
 }
 
-export async function sendPostRequest<T>(endpoint = "", data = {}): Promise<Response<T>> {
+export async function sendPostRequest<T>(
+  endpoint = "",
+  data = {},
+): Promise<Response<T>> {
   const baseURL = process.env.BACKEND_URL; // uses Vite env_vars (production or local)
 
   const response = await fetch(baseURL + endpoint, {

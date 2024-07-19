@@ -1,0 +1,57 @@
+.card-hover {
+  display: block;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.5s linear;
+  background: url(https://i.ibb.co/JcMGzxT/01.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.card-hover:hover {
+  background-position: left center;
+  filter: unset;
+}
+
+.card-hover .overlay {
+  opacity: 1;
+  height: 100%;
+  padding: 20px;
+  background: rgba(0 0 0 / 0.4);
+  transition: opacity 0.5s linear;
+}
+
+.card-hover h2,
+.card-hover p {
+  color: #fff;
+}
+.card-hover .content > h2 {
+  margin-bottom: 10px;
+}
+
+.card-hover .content {
+  height: 90%;
+  position: relative;
+    right: calc(-100% - 100px);
+  transition: right 0.5s linear;
+}
+
+.card-hover:hover .content {
+  right: 0;
+}
+
+.card-hover .learn-more-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  text-decoration: unset;
+  padding: 5px 10px;
+  border: 1px solid;
+}
+
+.card-hover .learn-more-btn:hover {
+  background: #fff;
+  color: #000;
+}

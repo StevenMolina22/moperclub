@@ -10,7 +10,7 @@ interface EventItem {
   website: string;
 }
 
-const EventCard = ( event: EventItem ) => {
+const EventCard = (event: EventItem) => {
   return (
     <div className="w-[24rem] overflow-hidden rounded-lg bg-white shadow-md lg:w-[36rem]">
       {/* Image: (100% w and h) */}

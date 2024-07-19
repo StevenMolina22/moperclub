@@ -16,9 +16,9 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           onClick={onClose}
           className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
         ></div>
-        <section className="absolute inset-y-0 right-0 pl-10 max-w-full flex ">
-          <div className="relative w-screen max-w-md bg">
-            <div className="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+        <section className="absolute inset-y-0 right-0 flex max-w-full pl-10 ">
+          <div className="bg relative w-screen max-w-md">
+            <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
               <div className="px-9 sm:px-9">
                 <button
                   onClick={onClose}
@@ -46,32 +46,32 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                 <nav className="grid gap-y-4 text-lg">
                   <a
                     href="#"
-                    className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                    className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
                   >
                     <span className="ml-3">Home</span>
                   </a>
                   <a
                     href="#"
-                    className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                    className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
                   >
                     <span className="ml-3">About</span>
                   </a>
                   <a
                     href="#"
-                    className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                    className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
                   >
                     <span className="ml-3">Blog</span>
                   </a>
                   <a
                     href="#"
-                    className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                    className="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100"
                   >
                     <span className="ml-3">Contact</span>
                   </a>
                 </nav>
               </div>
               <div className="mt-8 px-2 text-lg">
-                <h3 className="px-3 text-xl font-semibold text-gray-500 uppercase tracking-wide">
+                <h3 className="px-3 text-xl font-semibold uppercase tracking-wide text-gray-500">
                   Categories
                 </h3>
                 <ul className="mt-1">

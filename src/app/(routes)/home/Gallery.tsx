@@ -4,17 +4,17 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 export default function Gallery() {
   return (
     <div className="mt-9">
-      <div className="text-center my-10">
+      <div className="my-10 text-center">
         <h2 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
           Te mostramos lugares inexplorados
         </h2>
-        <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48">
+        <p className="mb-6 text-lg font-normal text-gray-500 sm:px-16 lg:text-xl xl:px-48">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
           dicta voluptatibus blanditiis adipisci reiciendis, impedit asperiores
           minima facere eaque perferendis.
           <a
             href="#"
-            className="inline-flex items-center mx-2 justify-center text-base font-medium text-center text-red-700 rounded-lg hover:text-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900 hover:underline underli"
+            className="underli mx-2 inline-flex items-center justify-center rounded-lg text-center text-base font-medium text-red-700 hover:text-red-800 hover:underline focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"
           >
             Mirar mas
             <ArrowRightIcon className="h-6 w-6" />

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import { getAllItems } from "../api/getReq.api";
 // api date type defintion
