@@ -7,10 +7,10 @@ export function Hero() {
     backgroundPosition: "center",
   };
   return (
-    <div className="h-screen w-full dark" style={bgImageStyle}>
+    <div className="h-screen w-full dark flex flex-col justify-center items-center" style={bgImageStyle}>
       <div className="absolute h-screen w-full bg-black/60"></div>
-      <Navbar className="py-3" />
-      <div className="relative isolate -translate-y-16 px-6 lg:px-8">
+      <Navbar className="py-3 absolute" />
+      <div className="relative isolate px-6 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
