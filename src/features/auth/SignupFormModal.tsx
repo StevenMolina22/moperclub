@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { sendPostRequest } from "../api/postReq.api";
+import { sendPostRequest } from "../../app/api/postReq.api";
 
 // TypeScript types declaration:
 interface SignupFormProps {

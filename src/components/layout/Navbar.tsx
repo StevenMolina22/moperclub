@@ -1,130 +1,130 @@
 "use client";
-import React, { useState } from "react";
-import { FaEllipsisVertical } from "react-icons/fa6";
-import { MdClose } from "react-icons/md";
-import { Bars3Icon } from "@heroicons/react/24/outline";
-import { SearchBar } from "../compose/SearchBar";
-import Link from "next/link";
+import React from "react";
+import {
+  Navbar as NavbarLayout,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/react";
 import Image from "next/image";
-import { Button } from "../ui/button";
-import SignInButton from "@/app/auth/SignInButton";
-import SignupButton from "@/app/auth/SignupButton";
+import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { label: "Inicio", path: "/" },
-  { label: "Sobre Nosotros", path: "/about" },
-  // { label: "Recomendaciones", path: "/recommended" },
-  { label: "Productos", path: "/store" },
-  { label: "Blog", path: "/blog" },
-];
+export default function Navbar({className}: {className?: string}) {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-export default function Navbar() {
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-
-  const toggleNavbar = () => {
-    setIsNavbarOpen(!isNavbarOpen);
-  };
+  const menuItems = [
+    { label: "Home", link: "/", isActive: true },
+    { label: "About us", link: "/aboutus", isActive: false },
+    { label: "Blog", link: "/blog", isActive: false },
+    { label: "Contact", link: "/contact", isActive: false },
+    { label: "Store", link: "/store", isActive: false },
+  ];
 
   return (
-    <div>
-      {/* Desktop Navbar */}
-      <nav className="relative flex items-center justify-between bg-transparent px-4 py-4">
-        {/* Logo */}
-        <Link href="/" className="text-3xl font-bold leading-none">
-          <Image height={32} width={144} src="/logotipo.png" alt="Logo" />
-        </Link>
-
-        {/* Hamburger menu */}
-        <div className="lg:hidden">
-          <button
-            className="navbar-burger flex items-center p-3 text-blue-600"
-            onClick={toggleNavbar}
+    <NavbarLayout
+      onMenuOpenChange={setIsMenuOpen}
+      shouldHideOnScroll
+      isBordered
+      disableAnimation
+      isBlurred={false}
+      className={cn(isMenuOpen ? "bg-black/90" : "bg-transparent", className)}
+    >
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="text-white sm:hidden"
+        />
+        <NavbarBrand>
+          <LogoComponent />
+          <div className="flex flex-col font-bold text-inherit"></div>
+        </NavbarBrand>
+      </NavbarContent>
+      {/* Desktop Links */}
+      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+        {menuItems.map((item, idx) => (
+          <NavbarItem key={idx} isActive={item.isActive}>
+            <Link className="text-gray-300 font-medium text-lg" color="foreground" href={item.link}>
+              {item.label}
+            </Link>
+          </NavbarItem>
+        ))}
+        {/* <NavbarItem isActive>
+          <Link className="text-gray-300" color="foreground" href="/">
+            Home
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-gray-300" color="foreground" href="/about">
+            About us
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-gray-300" href="/blog" aria-current="page">
+            Blog
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-gray-300" color="foreground" href="/recommended">
+            Contact
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-gray-300" color="foreground" href="store">
+            Store
+          </Link>
+        </NavbarItem> */}
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem className="">
+          <Link className="text-background hover:underline" href="#">
+            Login
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button
+            className="text-background hover:text-foreground"
+            as={Link}
+            color="default"
+            href="#"
+            variant="ghost"
           >
-            <Bars3Icon className="h-6 w-6" />
-          </button>
-        </div>
+            Sign Up
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
 
-        {/* Navigation links */}
-        <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform lg:mx-auto lg:flex lg:w-auto lg:items-center lg:space-x-6">
-          {/* {navLinks.map((link, index) => (
-            <React.Fragment key={link.path}>
-              <li>
-                <Link
-                  href={link.path}
-                  className="text-sm text-gray-400 hover:font-bold hover:text-red-600 "
-                >
-                  {link.label}
-                </Link>
-              </li>
-              {index !== navLinks.length - 1 && (
-                <li className="text-gray-300">
-                  <FaEllipsisVertical className="text-sm" />
-                </li>
-              )}
-            </React.Fragment>
-          ))} */}
-        </ul>
-
-        {/* Search & Authentication */}
-        <div className="hidden lg:inline-block">
-          <div className="flex gap-2">
-            <SearchBar />
-            <SignInButton />
-            <SignupButton />
-          </div>
-        </div>
-      </nav>
-
-      {/* Responsive navbar container */}
-      {isNavbarOpen && (
-        <div className="navbar-menu relative z-50">
-          <div
-            className="navbar-backdrop fixed inset-0 bg-gray-900 opacity-80"
-            onClick={toggleNavbar}
-          />
-          <nav className="fixed bottom-0 left-0 top-0 flex w-5/6 max-w-sm flex-col overflow-y-auto border-r bg-gray-800 px-6 py-6">
-            {/* Visible items */}
-            <div className="mb-8 flex items-center">
-              <Link
-                href="/"
-                className="mr-auto text-3xl font-bold leading-none"
-              >
-                <Image height={24} src="/logotipo.png" alt="Logo" />
-              </Link>
-              <button onClick={toggleNavbar} className="navbar-close">
-                <MdClose className="text-3xl text-slate-500" />
-              </button>
-            </div>
-
-            {/* Hidden items */}
-            <div>
-              {/* <ul>
-                {navLinks.map((link) => (
-                  <li key={link.path} className="mb-1">
-                    <Link
-                      href={link.path}
-                      className="block rounded p-4 text-sm font-semibold text-gray-400 hover:bg-gray-700 hover:text-blue-600"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul> */}
-            </div>
-
-            {/* Authentication buttons (hidden) */}
-            <div className="mt-auto">
-              <div className="flex flex-col gap-3 pt-6">
-                <Button>Sign in</Button>
-                <Button>Sign up</Button>
-              </div>
-              <p className="my-4 text-center text-xs text-gray-400">
-                <span>Copyright © 2021</span>
-              </p>
-            </div>
-          </nav>
-        </div>
-      )}
-    </div>
+      {/* Responsive links */}
+      <NavbarMenu className="bg-black/90">
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={
+                index === 2
+                  ? "primary"
+                  : index === menuItems.length - 1
+                    ? "danger"
+                    : "foreground"
+              }
+              className="w-full text-white"
+              href={item.link}
+              size="lg"
+            >
+              {item.label}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </NavbarLayout>
   );
 }
+
+const LogoComponent = () => (
+  <Link href="/" className="text-3xl font-bold leading-none w-32 h-16">
+    <Image height={400} width={1000} src="/logotipo.png" alt="Logo" />
+  </Link>
+);

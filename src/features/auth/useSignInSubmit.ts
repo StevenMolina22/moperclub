@@ -1,5 +1,5 @@
 // useSignInSubmit.ts
-import { sendPostRequest, Response } from "../api/postReq.api";
+import { sendPostRequest, Response } from "../../app/api/postReq.api";
 
 type UseSignInSubmitProps = {
   closePopUp: () => void;

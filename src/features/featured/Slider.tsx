@@ -79,28 +79,28 @@ const SliderComponent = ({ items }: Props) => {
         {/* extra slides if backend not active */}
         <SwiperSlide>
           <Image
-            height={380}
-            width={670}
+            height={1080}
+            width={1920}
             className="h-[380px] w-auto rounded-2xl lg:h-[670px]"
-            src="https://images.unsplash.com/photo-1707789045435-971e848a914b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="z"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            height={380}
-            width={670}
-            className="h-[380px] w-auto rounded-2xl lg:h-[670px]"
-            src="https://images.unsplash.com/photo-1708086504310-134d8c4005f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1543746746-46047c4f4bb0"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <Image
-            height={380}
-            width={670}
+            height={1080}
+            width={1920}
             className="h-[380px] w-auto rounded-2xl lg:h-[670px]"
-            src="https://images.unsplash.com/photo-1707789045435-971e848a914b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1430232324554-8f4aebd06683"
+            alt="z"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            height={1080}
+            width={1920}
+            className="h-[380px] w-auto rounded-2xl lg:h-[670px]"
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30"
             alt="z"
           />
         </SwiperSlide>

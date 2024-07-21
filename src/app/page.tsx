@@ -1,24 +1,19 @@
 // Sections of the app page
-import Banner from "@/components/layout/Banner";
-import Featured from "./featured/FeaturedSection";
-import Events from "./events/Events";
-import PersonalMenu from "./(routes)/home/PersonalMenu";
-import Articles from "./articles/Articles";
+import { Hero } from "@/components/layout/Hero";
 import Footer from "../components/layout/Footer";
+import Articles from "../features/articles/Articles";
+import Events from "../features/events/Events";
+import Featured from "../features/featured/FeaturedSection";
+import Places from "../features/places/Places";
 import InspirationPage from "./(routes)/home/Inspiration";
-import Places from "./places/Places";
+import PersonalMenu from "./(routes)/home/PersonalMenu";
 
 // main app
 function Home() {
-  const bgHeroImage: string =
-    "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
   return (
     <div className="flex flex-col gap-8">
-      <Banner
-        bgImage={bgHeroImage}
-        titleText="MOPERCLUB"
-        subtitleText="Experiencias Inolvidables"
-      />
+      <Hero />
       <Featured />
       <InspirationPage />
       <div className=" text-center">

@@ -1,4 +1,4 @@
-import CustomNavbar from "@/components/layout/CustomNavbar";
+import CustomNavbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import UnderConstructionPage from "../../../components/compound/Construction";
 

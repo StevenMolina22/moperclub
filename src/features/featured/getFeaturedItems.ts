@@ -1,4 +1,4 @@
-import { getAllItems } from "../api/getReqNew.api";
+import { getAllItems } from "../../app/api/getReqNew.api";
 
 export interface ItemType {
   id: number;
