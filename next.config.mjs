@@ -3,12 +3,13 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
         hostname: "images.unsplash.com",
       },
       {
-        protocol: "https",
         hostname: "moperclub-bucket.s3.amazonaws.com",
+      },
+      {
+        hostname: "plus.unsplash.com",
       },
     ],
   },

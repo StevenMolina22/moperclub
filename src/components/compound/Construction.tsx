@@ -1,8 +1,9 @@
+import { cn } from "@/lib/utils";
 import { GiThorHammer } from "react-icons/gi";
 
-const UnderConstructionPage = () => {
+function UnderConstructionPage ({className}: {className?: string}) {
   return (
-    <div className="flex h-screen flex-col items-center">
+    <div className={cn("flex flex-col items-center justify-center", className)}>
       <div className="my-8 text-4xl font-bold">Under Construction</div>
       <div className="flex h-48 w-48 justify-center">
         <div className="animate-hammer">

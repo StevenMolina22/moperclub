@@ -40,7 +40,7 @@ const SliderComponent = ({ items }: Props) => {
           Exercitationem quae quaerat dolorem animi, tenetur molestiae pariatur
           alias quibusdam modi accusantium?
           <a
-            href="/recommended"
+            href="#"
             className="underli mx-2 inline-flex items-center justify-center rounded-lg text-center text-base font-medium text-orange-600 hover:text-orange-700 hover:underline focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-900"
           >
             Mirar mas

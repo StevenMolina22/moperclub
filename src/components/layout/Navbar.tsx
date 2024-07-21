@@ -1,25 +1,25 @@
 "use client";
-import React from "react";
+import { cn } from "@/lib/utils";
 import {
-  Navbar as NavbarLayout,
+  Button,
+  Link,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
-  Button,
-  NavbarMenuToggle,
+  Navbar as NavbarLayout,
   NavbarMenu,
   NavbarMenuItem,
+  NavbarMenuToggle,
 } from "@nextui-org/react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
 
-export default function Navbar({className}: {className?: string}) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+export default function Navbar({ className }: { className?: string }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
     { label: "Home", link: "/", isActive: true },
-    { label: "About us", link: "/aboutus", isActive: false },
+    { label: "About us", link: "/about", isActive: false },
     { label: "Blog", link: "/blog", isActive: false },
     { label: "Contact", link: "/contact", isActive: false },
     { label: "Store", link: "/store", isActive: false },
@@ -37,60 +37,40 @@ export default function Navbar({className}: {className?: string}) {
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="text-white sm:hidden"
+          className={cn(isMenuOpen ? "dark " : "", "text-foreground sm:hidden")}
         />
         <NavbarBrand>
           <LogoComponent />
           <div className="flex flex-col font-bold text-inherit"></div>
         </NavbarBrand>
       </NavbarContent>
+
       {/* Desktop Links */}
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         {menuItems.map((item, idx) => (
           <NavbarItem key={idx} isActive={item.isActive}>
-            <Link className="text-gray-300 font-medium text-lg" color="foreground" href={item.link}>
+            <Link
+              className="font-medium text-foreground hover:underline"
+              color="foreground"
+              href={item.link}
+            >
               {item.label}
             </Link>
           </NavbarItem>
         ))}
-        {/* <NavbarItem isActive>
-          <Link className="text-gray-300" color="foreground" href="/">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-gray-300" color="foreground" href="/about">
-            About us
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-gray-300" href="/blog" aria-current="page">
-            Blog
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-gray-300" color="foreground" href="/recommended">
-            Contact
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-gray-300" color="foreground" href="store">
-            Store
-          </Link>
-        </NavbarItem> */}
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent className={isMenuOpen ? "dark" : ""} justify="end">
         <NavbarItem className="">
-          <Link className="text-background hover:underline" href="#">
+          <Link className="text-foreground hover:underline" href="/auth/login">
             Login
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Button
-            className="text-background hover:text-foreground"
+            className="text-foreground"
             as={Link}
             color="default"
-            href="#"
+            href="/auth/signup"
             variant="ghost"
           >
             Sign Up
@@ -99,7 +79,7 @@ export default function Navbar({className}: {className?: string}) {
       </NavbarContent>
 
       {/* Responsive links */}
-      <NavbarMenu className="bg-black/90">
+      <NavbarMenu className="bg-black/90 dark">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
@@ -110,7 +90,7 @@ export default function Navbar({className}: {className?: string}) {
                     ? "danger"
                     : "foreground"
               }
-              className="w-full text-white"
+              className="w-full text-foreground"
               href={item.link}
               size="lg"
             >
@@ -124,7 +104,7 @@ export default function Navbar({className}: {className?: string}) {
 }
 
 const LogoComponent = () => (
-  <Link href="/" className="text-3xl font-bold leading-none w-32 h-16">
+  <Link href="/" className="h-16 w-32 text-3xl font-bold leading-none">
     <Image height={400} width={1000} src="/logotipo.png" alt="Logo" />
   </Link>
 );

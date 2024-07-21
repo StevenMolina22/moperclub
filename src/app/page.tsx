@@ -1,18 +1,15 @@
-// Sections of the app page
 import { Hero } from "@/components/layout/Hero";
 import Footer from "../components/layout/Footer";
 import Articles from "../features/articles/Articles";
 import Events from "../features/events/Events";
 import Featured from "../features/featured/FeaturedSection";
 import Places from "../features/places/Places";
-import InspirationPage from "./(routes)/home/Inspiration";
-import PersonalMenu from "./(routes)/home/PersonalMenu";
+import InspirationPage from "./home/Inspiration";
+import PersonalMenu from "./home/PersonalMenu";
 
-// main app
 function Home() {
-
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-16">
       <Hero />
       <Featured />
       <InspirationPage />
@@ -31,10 +28,6 @@ function Home() {
       <Places />
       <Articles />
       <PersonalMenu />
-      <h2 className="my-6 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-5xl">
-        Ten mas informacion acerca de nosotros
-      </h2>
-      <Footer />
     </div>
   );
 }

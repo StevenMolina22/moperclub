@@ -3,17 +3,18 @@ import { useState } from "react";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaDiscord, FaTwitter, FaGithub } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
+import { cn } from "@/lib/utils";
 
-export default function Footer(): JSX.Element {
+export default function Footer({className}: {className?: string}): JSX.Element {
   const [formInput, setFormInput] = useState("");
 
   // Handle form submission
   const handleForm = () => {
-    alert(formInput + " the submit was a success");
+    alert(formInput + "Email function not implemented yet");
   };
 
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className={cn("bg-white dark:bg-gray-900", className)}>
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -43,7 +44,7 @@ export default function Footer(): JSX.Element {
                 className="rounded-lg border p-2 px-4 dark:text-white"
               >
                 {" "}
-                Enviar{" "}
+                Send{" "}
               </button>
             </div>
           </div>
@@ -56,13 +57,13 @@ export default function Footer(): JSX.Element {
               </h2>
               <ul className="font-medium text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">
+                  <a href="#" className="hover:underline">
                     Moperclub
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://tailwindcss.com/"
+                    href="#"
                     className="hover:underline"
                   >
                     Tailwind CSS
@@ -77,7 +78,7 @@ export default function Footer(): JSX.Element {
               <ul className="font-medium text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/themesberg/flowbite"
+                    href="#"
                     className="hover:underline "
                   >
                     Github
@@ -85,7 +86,7 @@ export default function Footer(): JSX.Element {
                 </li>
                 <li>
                   <a
-                    href="https://discord.gg/4eeurUVvTy"
+                    href="#"
                     className="hover:underline"
                   >
                     Discord
@@ -119,7 +120,7 @@ export default function Footer(): JSX.Element {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
             © 2023{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
+            <a href="#" className="hover:underline">
               Moperclub™
             </a>
             . All Rights Reserved.

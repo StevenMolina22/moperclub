@@ -1,5 +1,5 @@
 // styles
-import CustomNavbar from "./Navbar";
+import Navbar from "./Navbar";
 
 // banner components types definition
 interface Props {
@@ -17,10 +17,10 @@ export default function Banner({ bgImage, titleText, subtitleText }: Props) {
   };
   // returned component
   return (
-  <section className="home-page h-screen" style={bgImageStyle}>
-    <div className="banner__img-overlay absolute h-screen w-full bg-black/60"></div>
+    <section className="home-page h-screen" style={bgImageStyle}>
+      <div className="banner__img-overlay absolute h-screen w-full bg-black/60"></div>
       {/* Navbar component*/}
-      <CustomNavbar className="my-6" />
+      <Navbar className="my-6" />
       {/* Baner centered elements/ Call to action */}
       <div className="fluid-container banner flex h-screen w-full items-center justify-center ">
         <div className="banner__border"></div>
