@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { UserButton } from "@clerk/nextjs";
 import {
   Button,
   Link,
@@ -59,10 +60,10 @@ export default function Navbar({ className }: { className?: string }) {
           </NavbarItem>
         ))}
       </NavbarContent>
-      <NavbarContent className={isMenuOpen ? "dark" : ""} justify="end">
+      <NavbarContent className={cn(isMenuOpen ? "dark" : "")} justify="end">
         <NavbarItem className="">
-          <Link className="text-foreground hover:underline" href="/auth/login">
-            Login
+          <Link className="text-foreground hover:underline" href="/auth/sign-in">
+            Sign In
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -70,11 +71,14 @@ export default function Navbar({ className }: { className?: string }) {
             className="text-foreground"
             as={Link}
             color="default"
-            href="/auth/signup"
+            href="/auth/sign-up"
             variant="ghost"
           >
             Sign Up
           </Button>
+        </NavbarItem>
+        <NavbarItem>
+          <UserButton />
         </NavbarItem>
       </NavbarContent>
 
