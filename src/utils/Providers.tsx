@@ -5,5 +5,5 @@ import {
 import { NextUIProvider } from "@nextui-org/react";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  return <ClerkProvider><NextUIProvider>{children}</NextUIProvider></ClerkProvider>;
+  return <NextUIProvider>{children}</NextUIProvider>;
 }
