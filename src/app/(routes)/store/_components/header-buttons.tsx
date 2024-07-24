@@ -1,5 +1,5 @@
 import { ArrowDownAZ, ChevronDown, Filter } from "lucide-react";
-import { HiddenDropdown } from "./HiddenDropdown";
+import { HiddenDropdown } from "./hidden-dropdown";
 
 export function HeaderButtons() {
   return <div className="flex items-center space-x-4">

@@ -1,10 +1,10 @@
-import { Hero } from "@/app/home/hero";
-import Events from "./home/events";
-import Featured from "./home/featured/featured-section";
-import Places from "./home/places";
-import InspirationPage from "./home/Inspiration";
-import PersonalMenu from "./home/personal-menu";
-import { SectionCTA } from "./home/section-name";
+import { Hero } from "@/app/(routes)/home/hero";
+import Events from "./(routes)/home/events";
+import Featured from "./(routes)/home/featured/featured-section";
+import Places from "./(routes)/home/places";
+import InspirationPage from "./(routes)/home/Inspiration";
+import PersonalMenu from "./(routes)/home/personal-menu";
+import { SectionCTA } from "./(routes)/home/section-name";
 
 function Home() {
   return (

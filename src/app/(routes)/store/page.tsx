@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Breadcrumb } from "./_components/Breadcrumb";
-import { FilterModal } from "./_components/FilterModal";
-import { HeaderButtons } from "./_components/HeaderButtons";
+import { Breadcrumb } from "./_components/breadcrumb";
+import { FilterModal } from "./_components/filter-modal";
+import { HeaderButtons } from "./_components/header-buttons";
 import { ProductCard } from "./_components/product-card";
 import { products } from "./data";
 

@@ -1,4 +1,4 @@
-import { IconCard } from "../../components/compound/icon-card";
+import { IconCard } from "../../../components/compound/icon-card";
 import { IconCardType } from "@/types/cards";
 
 interface Props {

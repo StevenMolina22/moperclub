@@ -1,4 +1,4 @@
-import Navbar from "../../components/layout/navbar";
+import Navbar from "../../../components/layout/navbar";
 
 export function Hero() {
   const bgImageStyle = {
