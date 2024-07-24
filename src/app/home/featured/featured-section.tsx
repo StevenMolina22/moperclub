@@ -1,5 +1,5 @@
 // "use client";
-import Slider from "../../features/featured/Slider";
+import Slider from "./featured-slider";
 // import getFeaturedItems from "./getFeaturedItems";
 
 const Featured = async () => {

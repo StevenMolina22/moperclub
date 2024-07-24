@@ -1,4 +1,4 @@
-import ShowcasePanel from "@/components/layout/ShowcasePanel";
+import ShowcasePanel from "@/components/layout/showcase-panel";
 import { data as inspirationData } from "./data";
 
 function InspirationPage() {

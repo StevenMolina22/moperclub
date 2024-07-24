@@ -1,4 +1,4 @@
-import Navbar from '@/components/layout/Navbar';
+import Navbar from '@/components/layout/navbar';
 
 function ContactPage() {
  const servicesItems = ["Entertainment", "Clothing Style", "Accessories", "Partying"]

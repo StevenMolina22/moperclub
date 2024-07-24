@@ -1,10 +1,10 @@
 "use client";
-import MoreButton from "./InfoDropdown"; // dropdown button more info
+import MoreButton from "./dropdown-info"; // dropdown button more info
 import { Swiper, SwiperSlide } from "swiper/react"; // slider components
 import "swiper/css"; // style for sliders
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import useWindowWidth from "./useWindowWidth";
+import useWindowWidth from "@/hooks/useWindowWidth";
 
 // --Type definition for the api data (to be used in the item state definition)
 type ItemType = {
@@ -21,7 +21,7 @@ interface Props {
 
 // --- main component
 const SliderComponent = ({ items }: Props) => {
-  const { windowWidth, setWindowWidth } = useWindowWidth(); // window width hook
+  const windowWidth = useWindowWidth(); // window width hook
 
   if (windowWidth === null) {
     return null; // Render nothing or a loader until windowWidth is available

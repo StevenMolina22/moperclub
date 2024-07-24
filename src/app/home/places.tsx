@@ -1,6 +1,6 @@
-import ContentDarkWrapper from "@/components/layout/ContentDarkWrapper";
-import { VerticalCardsGallery } from "@/components/compound/VerticalCardsGallery";
-import { supabase } from "@/db/db";
+import ContentDarkWrapper from "@/components/layout/content-dark-wrapper";
+import { VerticalCardsGallery } from "@/components/compound/vertical-cards-gallery";
+import { supabase } from "@/db";
 import { InteractiveCardType } from "@/types/cards";
 
 export default async function Places() {
@@ -8,7 +8,7 @@ export default async function Places() {
   const places = data as InteractiveCardType[];
 
   if (error) return null;
-  
+
   return (
     <ContentDarkWrapper
       title="Places to go"

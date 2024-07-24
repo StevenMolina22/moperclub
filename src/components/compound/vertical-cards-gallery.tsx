@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import InteractiveCard from "./InteractiveCard";
+import InteractiveCard from "./interactive-card";
 
 export const VerticalCardsGallery = ({
   cardsContent,

@@ -1,5 +1,5 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
-import CustomNavbar from "@/components/layout/Navbar";
+import Breadcrumb from "@/components/common/breadcrumb";
+import CustomNavbar from "@/components/layout/navbar";
 import { Metadata } from "next";
 import SingleBlog from "./single-blog";
 import data from "./data.json";

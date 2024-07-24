@@ -1,10 +1,10 @@
-import { Hero } from "@/app/home/Hero";
-import Events from "../features/events/Events";
-import Featured from "./home/FeaturedSection";
-import Places from "../features/places/Places";
+import { Hero } from "@/app/home/hero";
+import Events from "./home/events";
+import Featured from "./home/featured/featured-section";
+import Places from "./home/places";
 import InspirationPage from "./home/Inspiration";
-import PersonalMenu from "./home/PersonalMenu";
-import { SectionName } from "./home/section-name";
+import PersonalMenu from "./home/personal-menu";
+import { SectionCTA } from "./home/section-name";
 
 function Home() {
   return (
@@ -24,7 +24,7 @@ function Home() {
         </p>
       </div>
       <Events />
-      <SectionName />
+      <SectionCTA />
       <Places />
       {/* <Articles /> */}
       <PersonalMenu />

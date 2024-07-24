@@ -1,7 +1,7 @@
 import { TeamType } from "@/types/team";
 import Image from "next/image";
 
-const SingleTeam = ({ team }: { team: TeamType }) => {
+const TeamItem = ({ team }: { team: TeamType }) => {
   const { image, name, designation, facebookLink, twitterLink, instagramLink } =
     team;
   return (
@@ -317,4 +317,4 @@ const SingleTeam = ({ team }: { team: TeamType }) => {
   );
 };
 
-export default SingleTeam;
+export default TeamItem;

@@ -1,4 +1,4 @@
-import ImagesIcons from "../../components/layout/ImagesIcons";
+import ImagesIcons from "../../components/layout/images-icons";
 // import { getAllItems } from "../api/getReqNew.api";
 
 type ArticlesType = {
