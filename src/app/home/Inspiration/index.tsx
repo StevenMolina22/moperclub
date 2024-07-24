@@ -1,5 +1,5 @@
 import ShowcasePanel from "@/components/layout/ShowcasePanel";
-import { data as inspirationData } from "./Inspiration.data";
+import { data as inspirationData } from "./data";
 
 function InspirationPage() {
   const { image, body, messages } = inspirationData;

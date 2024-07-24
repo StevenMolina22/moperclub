@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import SingleBlog from "./single-blog";
 import data from "./data.json";
 export const metadata: Metadata = {
-  title: "Blog Grids | Play SaaS Starter Kit and Boilerplate for Next.js",
+  title: "Blog Info | Play SaaS Starter Kit and Boilerplate for Next.js",
   description: "Blog grids page description",
 };
 const posts = data.posts;
@@ -13,7 +13,7 @@ const Blog = () => {
   return (
     <>
       <CustomNavbar />
-      <Breadcrumb pageName="Blog Grids" />
+      <Breadcrumb pageName="Blog Info" />
 
       <section className="pb-10 pt-10">
         <div className="container">

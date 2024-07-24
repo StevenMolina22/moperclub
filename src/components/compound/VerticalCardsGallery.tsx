@@ -1,5 +1,4 @@
 "use client";
-// VerticalCardsGallery.tsx
 import { InteractiveCardType } from "@/types/cards";
 import { useEffect, useState } from "react";
 import "swiper/css/pagination";
@@ -31,7 +30,7 @@ export const VerticalCardsGallery = ({
   }
 
   return windowWidth >= 768 ? (
-    <div className="flex flex-wrap justify-center gap-2 p-8">
+    <div className="grid grid-cols-2 xl:grid-cols-4 justify-items-center w-fit justify-center mx-auto items-center gap-5 p-8 ">
       {cardsContent.map((cardContent, index) => (
         <InteractiveCard key={index} cardInfo={cardContent} />
       ))}

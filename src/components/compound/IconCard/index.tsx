@@ -1,5 +1,5 @@
 // import { IconCardType } from "@/types/cards";
-import "@/components/compound/icon-card.css";
+import "./styles.css";
 
 type Props = {
   title: string;

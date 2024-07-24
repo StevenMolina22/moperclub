@@ -1,8 +1,6 @@
-import { Hero } from "@/components/layout/Hero";
-import Footer from "../components/layout/Footer";
-import Articles from "../features/articles/Articles";
+import { Hero } from "@/app/home/Hero";
 import Events from "../features/events/Events";
-import Featured from "../features/featured/FeaturedSection";
+import Featured from "./home/FeaturedSection";
 import Places from "../features/places/Places";
 import InspirationPage from "./home/Inspiration";
 import PersonalMenu from "./home/PersonalMenu";
