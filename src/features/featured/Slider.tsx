@@ -33,7 +33,7 @@ const SliderComponent = ({ items }: Props) => {
       {/* title text and message */}
       <div className="text-center">
         <h2 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-          Solo Sorprendete{" "}
+          It&apos;ll exploit your mind
         </h2>
         <p className="mb-6 text-lg font-normal text-gray-500 sm:px-16 lg:text-xl xl:px-48">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.

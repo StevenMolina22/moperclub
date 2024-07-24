@@ -1,14 +1,33 @@
-import UnderConstructionPage from "@/components/compound/Construction";
+import Breadcrumb from "@/components/Common/Breadcrumb";
 import CustomNavbar from "@/components/layout/Navbar";
+import { Metadata } from "next";
+import SingleBlog from "./single-blog";
+import data from "./data.json";
+export const metadata: Metadata = {
+  title: "Blog Grids | Play SaaS Starter Kit and Boilerplate for Next.js",
+  description: "Blog grids page description",
+};
+const posts = data.posts;
 
-export default function Blog() {
+const Blog = () => {
   return (
-    <div className="">
+    <>
       <CustomNavbar />
-      <div className="text-center text-4xl font-semibold">Blog</div>
-      <div className="p-16">
-        <UnderConstructionPage />
-      </div>
-    </div>
+      <Breadcrumb pageName="Blog Grids" />
+
+      <section className="pb-10 pt-10">
+        <div className="container">
+          <div className="-mx-4 flex flex-wrap justify-center">
+            {posts.map((blog, i) => (
+              <div key={i} className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3">
+                <SingleBlog blog={blog} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
-}
+};
+
+export default Blog;

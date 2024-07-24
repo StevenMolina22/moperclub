@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "title": "The best places in Argentina",
+      "coverImage": "https://images.unsplash.com/photo-1483394943446-89e4d5530d8c",
+      "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "date": "2021-06-15",
+      "slug": "the-best-places-in-argentina"
+    },
+    {
+      "title": "Entertainment in Buenos Aires",
+      "coverImage": "https://images.unsplash.com/photo-1543342140-668798b54578",
+      "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "date": "2021-06-15",
+      "slug": "entertainment-in-buenos-aires"
+    },
+    {
+      "title": "Sports in Buenos Aires",
+      "coverImage": "https://images.unsplash.com/photo-1483394943446-89e4d5530d8c",
+      "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "date": "2021-06-15",
+      "slug": "sports-in-buenos-aires"
+    },
+    {
+      "title": "Visiting this place is an absolute must",
+      "coverImage": "https://images.unsplash.com/photo-1543342140-668798b54578",
+      "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "date": "2021-06-15",
+      "slug": "visiting-this-place-is-an-absolute-must"
+    },
+    {
+      "title": "The best places in Argentina",
+      "coverImage": "https://images.unsplash.com/photo-1483394943446-89e4d5530d8c",
+      "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "date": "2021-06-15"
+    },
+    {
+      "title": "Visiting this place is an absolute must",
+      "coverImage": "https://images.unsplash.com/photo-1543342140-668798b54578",
+      "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "date": "2021-06-15",
+      "slug": "visiting-this-place-is-an-absolute-must"
+    }
+  ]
+}

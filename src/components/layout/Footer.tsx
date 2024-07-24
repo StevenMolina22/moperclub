@@ -14,12 +14,12 @@ export default function Footer({className}: {className?: string}): JSX.Element {
   };
 
   return (
-    <footer className={cn("bg-white dark:bg-gray-900", className)}>
+    <footer className={cn("bg-background", className)}>
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
-              <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+            <a href="/" className="flex items-center">
+              <span className="self-center whitespace-nowrap text-2xl font-semibold">
                 Moperclub
               </span>
             </a>
@@ -41,7 +41,7 @@ export default function Footer({className}: {className?: string}): JSX.Element {
               </form>
               <button
                 onClick={handleForm}
-                className="rounded-lg border p-2 px-4 dark:text-white"
+                className="rounded-lg border p-2 px-4"
               >
                 {" "}
                 Send{" "}
@@ -52,10 +52,10 @@ export default function Footer({className}: {className?: string}): JSX.Element {
           {/* ----------- INFO MENU (Legal, Links, etc) ---------- */}
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold uppercase text-foreground">
                 Resources
               </h2>
-              <ul className="font-medium text-gray-500 dark:text-gray-400">
+              <ul className="font-medium text-muted-foreground dark:text-gray-400">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
                     Moperclub
@@ -66,16 +66,16 @@ export default function Footer({className}: {className?: string}): JSX.Element {
                     href="#"
                     className="hover:underline"
                   >
-                    Tailwind CSS
+                    Behind Scenes
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold uppercase text-foreground">
                 Follow us
               </h2>
-              <ul className="font-medium text-gray-500 dark:text-gray-400">
+              <ul className="font-medium text-muted-foreground">
                 <li className="mb-4">
                   <a
                     href="#"
@@ -98,7 +98,7 @@ export default function Footer({className}: {className?: string}): JSX.Element {
               <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                 Legal
               </h2>
-              <ul className="font-medium text-gray-500 dark:text-gray-400">
+              <ul className="font-medium text-muted-foreground dark:text-gray-400">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
                     Privacy Policy
@@ -118,7 +118,7 @@ export default function Footer({className}: {className?: string}): JSX.Element {
 
         {/* ------- COPYRIGHT SECTION & SOCIAL ICONS ------- */}
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+          <span className="text-sm text-muted-foreground dark:text-gray-400 sm:text-center">
             © 2023{" "}
             <a href="#" className="hover:underline">
               Moperclub™
@@ -131,7 +131,7 @@ export default function Footer({className}: {className?: string}): JSX.Element {
             {/* Facebook */}
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="text-muted-foreground hover:text-gray-900 dark:hover:text-white"
             >
               <FaFacebookF />
               <span className="sr-only">Facebook page</span>
@@ -139,7 +139,7 @@ export default function Footer({className}: {className?: string}): JSX.Element {
             {/* Discord */}
             <a
               href="#"
-              className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="ms-5 text-muted-foreground hover:text-gray-900 dark:hover:text-white"
             >
               <FaDiscord />
               <span className="sr-only">Discord community</span>
@@ -147,7 +147,7 @@ export default function Footer({className}: {className?: string}): JSX.Element {
             {/* Twitter */}
             <a
               href="#"
-              className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="ms-5 text-muted-foreground hover:text-gray-900 dark:hover:text-white"
             >
               <FaTwitter />
 
@@ -156,7 +156,7 @@ export default function Footer({className}: {className?: string}): JSX.Element {
             {/* GitHub */}
             <a
               href="#"
-              className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="ms-5 text-muted-foreground hover:text-gray-900 dark:hover:text-white"
             >
               <FaGithub />
               <span className="sr-only">GitHub account</span>
@@ -164,7 +164,7 @@ export default function Footer({className}: {className?: string}): JSX.Element {
             {/* Dribbble */}
             <a
               href="#"
-              className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              className="ms-5 text-muted-foreground hover:text-gray-900 dark:hover:text-white"
             >
               <TbWorldWww />
 

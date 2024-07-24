@@ -6,6 +6,7 @@ import Featured from "../features/featured/FeaturedSection";
 import Places from "../features/places/Places";
 import InspirationPage from "./home/Inspiration";
 import PersonalMenu from "./home/PersonalMenu";
+import { SectionName } from "./home/section-name";
 
 function Home() {
   return (
@@ -25,8 +26,9 @@ function Home() {
         </p>
       </div>
       <Events />
+      <SectionName />
       <Places />
-      <Articles />
+      {/* <Articles /> */}
       <PersonalMenu />
     </div>
   );

@@ -3,18 +3,18 @@ import IconMenu from "./IconMenu";
 export default function PersonalMenu() {
   const iconCardsContent = [
     {
-      title: "Perfil",
-      body: "Haz click para visualizar el perfil",
+      title: "Profile",
+      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit itaque",
       icon: "face",
     },
     {
-      title: "Favoritos",
-      body: "Mira todos tus favoritos en un solo lugar",
+      title: "Favorites",
+      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit itaque",
       icon: "favorite_border",
     },
     {
-      title: "Contactos",
-      body: "Añade o cambia tus contactos o links.",
+      title: "Contacts",
+      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit itaque",
       icon: "alternate_email",
     },
   ];
@@ -35,8 +35,8 @@ export default function PersonalMenu() {
       </div>
 
       <IconMenu
-        title="Tu Menu Personal"
-        subtitle="Hecho Para Ti"
+        title="Personal Menu"
+        subtitle="Made for you"
         cards={iconCardsContent}
       />
     </>

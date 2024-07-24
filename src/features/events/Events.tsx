@@ -10,12 +10,12 @@ export default async function Events() {
     data: InteractiveCardType[];
     error: any;
   };
+  if (error) return null;
 
   return (
     <ContentDarkWrapper
-      title="Eventos para ti"
-      subtitle="No te fallan"
-      displayedComponent={<div></div>}
+      title="Events you cannot lose"
+      subtitle="Just incredible"
     >
       <VerticalCardsGallery cardsContent={data} />
     </ContentDarkWrapper>

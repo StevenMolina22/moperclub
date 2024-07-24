@@ -1,8 +1,7 @@
-import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 
 function ContactPage() {
- const servicesItems = ["Mobile development", "UI/UX Design", "web development", "SEO"]
+ const servicesItems = ["Entertainment", "Clothing Style", "Accessories", "Partying"]
   return (
     <div>
       {/* <Navbar /> */}
@@ -52,14 +51,14 @@ function ContactPage() {
                             <div className="relative mt-2">
                                 <div className="absolute inset-y-0 left-3 my-auto h-6 flex items-center border-r pr-2">
                                     <select className="text-sm bg-transparent outline-none rounded-lg h-full">
+                                        <option>AR</option>
+                                        <option>CO</option>
                                         <option>US</option>
-                                        <option>ES</option>
-                                        <option>MR</option>
                                     </select>
                                 </div>
                                 <input
                                     type="number"
-                                    placeholder="+1 (555) 000-000"
+                                    placeholder="+54 911 000-000"
                                     required
                                     className="w-full pl-[4.5rem] pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-gray-800 shadow-sm rounded-lg"
                                 />
