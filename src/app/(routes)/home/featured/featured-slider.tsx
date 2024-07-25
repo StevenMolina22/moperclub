@@ -5,6 +5,7 @@ import "swiper/css"; // style for sliders
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import useWindowWidth from "@/hooks/useWindowWidth";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 // --Type definition for the api data (to be used in the item state definition)
 type ItemType = {
@@ -53,9 +54,18 @@ const SliderComponent = ({ items }: Props) => {
       <Swiper
         centeredSlides={true}
         spaceBetween={30}
+        // loop={true}
+        autoplay={{
+          delay: 5000,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
         slidesPerView={windowWidth > 768 ? 1.5 : 1.2} // view device settings
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
       >
         {/* slides: items of the slider */}
         {items.map((item, index) => (
