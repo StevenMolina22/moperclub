@@ -1,7 +1,7 @@
-import ShowcasePanel from "@/components/layout/showcase-panel";
+import ShowcasePanel from "@/components/sections/showcase-panel";
 import { data as inspirationData } from "./data";
 
-function InspirationPage() {
+export function InspirationPage() {
   const { image, body, messages } = inspirationData;
   return (
     <ShowcasePanel
@@ -13,5 +13,3 @@ function InspirationPage() {
     />
   );
 }
-
-export default InspirationPage;

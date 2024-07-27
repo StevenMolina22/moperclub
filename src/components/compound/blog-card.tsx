@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 
-const SingleBlog = ({ blog }: { blog: Blog }) => {
+const BlogCard = ({ blog }: { blog: Blog }) => {
   const { title, coverImage, excerpt, date, slug } = blog;
 
   return (
@@ -37,4 +37,4 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
   );
 };
 
-export default SingleBlog;
+export default BlogCard;

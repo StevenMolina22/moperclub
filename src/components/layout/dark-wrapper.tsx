@@ -6,7 +6,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export default function ContentDarkWrapper({
+export function ContentDarkWrapper({
   title = "",
   subtitle = "",
   displayedComponent,

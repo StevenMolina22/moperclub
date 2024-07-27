@@ -1,10 +1,10 @@
-export type InteractiveCardType = {
+export type Card = {
   image: string;
-  name: string;
+  title: string;
   description: string;
 };
 
-export type IconCardType = {
+export type IconCard = {
   icon: string;
   title: string;
   body: string;

@@ -1,6 +1,6 @@
 import IconMenu from "./icon-menu";
 
-export default function PersonalMenu() {
+export function PersonalMenu() {
   const iconCardsContent = [
     {
       title: "Profile",

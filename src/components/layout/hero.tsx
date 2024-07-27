@@ -1,13 +1,14 @@
-import Navbar from "../../../components/layout/navbar";
+import Navbar from "./navbar";
 
 export function Hero() {
-  const bgImageStyle = {
+  const bgImage = {
     backgroundImage: `url(https://images.unsplash.com/photo-1566737236500-c8ac43014a67)`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
   };
   return (
-    <div className="h-screen w-full dark flex flex-col justify-center items-center" style={bgImageStyle}>
+    <div
+      className="flex h-screen w-full flex-col items-center justify-center bg-cover bg-center dark"
+      style={bgImage}
+    >
       <div className="absolute h-screen w-full bg-black/60"></div>
       <Navbar className="absolute" />
       <div className="relative isolate px-6 lg:px-8">
@@ -34,9 +35,10 @@ export function Hero() {
             </div>
           </div>
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Moperclub vibe and trendy
+            <h1 className="text-6xl font-bold tracking-tight text-foreground sm:text-7xl">
+              Moperclub
             </h1>
+            <h3 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl mt-3">Vibe and trendy</h3>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat

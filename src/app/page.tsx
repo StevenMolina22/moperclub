@@ -1,12 +1,12 @@
-import { Hero } from "@/app/(routes)/home/hero";
-import Events from "./(routes)/home/events";
-import Featured from "./(routes)/home/featured/featured-section";
-import Places from "./(routes)/home/places";
-import InspirationPage from "./(routes)/home/Inspiration";
-import PersonalMenu from "./(routes)/home/personal-menu";
+import { Hero } from "@/components/layout/hero";
+import { Events } from "@/components/sections/events";
+import { PersonalMenu } from "@/components/sections/personal-menu";
+import { Places } from "@/components/sections/places";
+import { InspirationPage } from "./(routes)/home/Inspiration";
+import { Featured } from "./(routes)/home/featured/featured-section";
 import { SectionCTA } from "./(routes)/home/section-name";
 
-function Home() {
+async function Home() {
   return (
     <div className="flex flex-col gap-16">
       <Hero />

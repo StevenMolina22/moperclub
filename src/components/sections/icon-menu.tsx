@@ -1,10 +1,10 @@
-import { IconCard } from "../../../components/compound/icon-card";
-import { IconCardType } from "@/types/cards";
+import { IconCard } from "../compound/icon-card";
+import { IconCard as TIconCard } from "@/types/cards";
 
 interface Props {
   title: string;
   subtitle: string;
-  cards: IconCardType[];
+  cards: TIconCard[];
 }
 
 function IconMenu({ title, subtitle, cards }: Props) {

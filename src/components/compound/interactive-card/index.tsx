@@ -1,12 +1,13 @@
 import { cn } from "@/lib/utils";
-import { InteractiveCardType } from "@/types/cards";
+import { Card as Card } from "@/types/cards";
 import "./styles.css"
-type InteractiveCardProps = {
-  cardInfo: InteractiveCardType;
+
+type Props = {
+  card: Card;
   className?: string;
 };
 
-const InteractiveCard = ({ cardInfo, className }: InteractiveCardProps) => {
+export function InteractiveCard({ card: cardInfo, className }: Props) {
   return (
     <div
       className={cn(
@@ -17,7 +18,7 @@ const InteractiveCard = ({ cardInfo, className }: InteractiveCardProps) => {
     >
       <div className="flex h-[100%] w-[100%] flex-col justify-end rounded-xl px-6 py-10 group-hover:bg-red-950 group-hover:bg-opacity-70 group-hover:shadow-red-950 md:px-3 md:py-5">
         <h2 className="hidden text-xl text-slate-50 group-hover:block lg:text-2xl">
-          {cardInfo.name}
+          {cardInfo.title} Title
         </h2>
         <p className="duration-2000 hidden text-base text-slate-100 opacity-0 transition-opacity group-hover:block group-hover:opacity-100 lg:text-lg">
           {cardInfo.description}
@@ -26,5 +27,3 @@ const InteractiveCard = ({ cardInfo, className }: InteractiveCardProps) => {
     </div>
   );
 };
-
-export default InteractiveCard;
