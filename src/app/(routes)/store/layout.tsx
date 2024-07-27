@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/navbar";
+import { ReactNode } from "react";
 
-function StoreLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+function StoreLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <>
       <Navbar />

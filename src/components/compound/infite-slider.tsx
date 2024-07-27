@@ -22,7 +22,7 @@ export function InfiniteSlider({ slides }: { slides: Slide[] }) {
         align: "center",
         loop: true,
       }}
-      className="w-full"
+      className="w-full slider-main"
       plugins={[
         Autoplay({
           delay: 4000,

@@ -3,9 +3,12 @@ import { Breadcrumb } from "./_components/breadcrumb";
 import { FilterModal } from "./_components/filter-modal";
 import { HeaderButtons } from "./_components/header-buttons";
 import { ProductCard } from "./_components/product-card";
-import { products } from "./data";
+import { fetcher } from "@/app/api/my-fetch";
+import { Product } from "@/types/products";
 
-function StorePage() {
+async function StorePage() {
+
+  const products: Product[] = await fetcher("/api/products")
   return (
       <section className="py-8 antialiased md:py-12">
         <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">

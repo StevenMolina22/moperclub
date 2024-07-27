@@ -1,1 +1,1 @@
-export const { API_URL, PROJECT_URL, API_KEY } = process.env;
+export const { BASE, PROJECT_URL, API_KEY } = process.env;

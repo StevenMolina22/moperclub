@@ -77,3 +77,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.slider-main .-right-12 {
+    right: 1rem !important;
+}
+
+.slider-main .-left-12 {
+    left: 1rem !important;
+}

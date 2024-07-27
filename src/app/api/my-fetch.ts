@@ -1,5 +1,5 @@
-import { API_URL } from "@/envs";
+import { BASE } from "@/envs";
 
-export function apiGET<T>(url: string): Promise<T> {
-  return fetch(API_URL + url).then((response) => response.json());
+export function fetcher<T>(url: string): Promise<T> {
+  return fetch(BASE + url).then((response) => response.json());
 }
