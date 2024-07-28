@@ -11,12 +11,12 @@ import { InteractiveCard } from "./interactive-card";
 
 export function CardCarousel({ cards, className }: { cards: Card[], className?: string }) {
   return (
-    <Carousel className={cn("w-full max-w-xs", className)}>
+    <Carousel className={cn("w-full max-w-[360px]", className)}>
       <CarouselContent>
         {cards.map((card, i) => (
           <CarouselItem key={i}>
-            <div className="p-1">
-              <InteractiveCard card={card} />
+            <div className="py-8">
+              <InteractiveCard className="mx-auto" card={card} />
             </div>
           </CarouselItem>
         ))}

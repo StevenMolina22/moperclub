@@ -32,7 +32,7 @@ export function InfiniteSlider({ slides }: { slides: Slide[] }) {
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index} className="md:basis-3/4 lg:basis-2/3">
-            <div className="p-1">
+            <div className="p-2">
               <SlideItem key={index} slide={slide} />
             </div>
           </CarouselItem>

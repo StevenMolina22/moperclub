@@ -1,10 +1,15 @@
 import Navbar from '@/components/layout/navbar';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Contact | Moperclub",
+
+}
 
 function ContactPage() {
  const servicesItems = ["Entertainment", "Clothing Style", "Accessories", "Partying"]
   return (
     <div>
-      {/* <Navbar /> */}
       <Navbar />
         <main className="flex py-16">
             <div className="flex-1 hidden lg:block">

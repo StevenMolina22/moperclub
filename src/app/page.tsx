@@ -5,10 +5,12 @@ import { Places } from "@/components/sections/places";
 import { InspirationPage } from "./(routes)/home/Inspiration";
 import { Featured } from "./(routes)/home/featured/featured-section";
 import { SectionCTA } from "./(routes)/home/section-name";
+import Navbar from "@/components/layout/navbar";
 
 async function Home() {
   return (
     <div className="flex flex-col gap-16">
+      <Navbar className="dark" />
       <Hero />
       <Featured />
       <InspirationPage />
@@ -26,7 +28,6 @@ async function Home() {
       <Events />
       <SectionCTA />
       <Places />
-      {/* <Articles /> */}
       <PersonalMenu />
     </div>
   );

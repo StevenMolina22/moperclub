@@ -1,10 +1,10 @@
 import Breadcrumb from "@/components/common/breadcrumb";
 import BlogCard from "@/components/compound/blog-card";
-import CustomNavbar from "@/components/layout/navbar";
+import Navbar from "@/components/layout/navbar";
 import { Metadata } from "next";
 import data from "./data.json";
 export const metadata: Metadata = {
-  title: "Blog Info | Play SaaS Starter Kit and Boilerplate for Next.js",
+  title: "Blog Info | Moperclub",
   description: "Blog grids page description",
 };
 const posts = data.posts;
@@ -12,7 +12,7 @@ const posts = data.posts;
 const Blog = () => {
   return (
     <>
-      <CustomNavbar />
+      <Navbar />
       <Breadcrumb pageName="Blog Info" />
 
       <section className="pb-10 pt-10">

@@ -1,9 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { UserButton } from "@clerk/nextjs";
+import { SignedOut, UserButton } from "@clerk/nextjs";
 import {
-  Button,
-  Link,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
@@ -11,9 +9,11 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from "@nextui-org/react";
+} from "@nextui-org/navbar";
 import Image from "next/image";
 import { useState } from "react";
+import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/link";
 
 export default function Navbar({ className }: { className?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,22 +61,27 @@ export default function Navbar({ className }: { className?: string }) {
         ))}
       </NavbarContent>
       <NavbarContent className={cn(isMenuOpen ? "dark" : "")} justify="end">
-        <NavbarItem className="">
-          <Link className="text-foreground hover:underline" href="/auth/sign-in">
-            Sign In
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button
-            className="text-foreground"
-            as={Link}
-            color="default"
-            href="/auth/sign-up"
-            variant="ghost"
-          >
-            Sign Up
-          </Button>
-        </NavbarItem>
+        <SignedOut>
+          <NavbarItem className="">
+            <Link
+              className="text-foreground hover:underline"
+              href="/auth/sign-in"
+            >
+              Sign In
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Button
+              className="text-foreground"
+              as={Link}
+              color="default"
+              href="/auth/sign-up"
+              variant="ghost"
+            >
+              Sign Up
+            </Button>
+          </NavbarItem>
+        </SignedOut>
         <NavbarItem>
           <UserButton />
         </NavbarItem>
