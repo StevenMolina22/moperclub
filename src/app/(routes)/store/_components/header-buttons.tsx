@@ -1,33 +1,77 @@
+"use client";
+import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
+
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { ArrowDownAZ, ChevronDown, Filter } from "lucide-react";
-import { HiddenDropdown } from "./hidden-dropdown";
+import { ReactNode, useState } from "react";
 
+type Checked = DropdownMenuCheckboxItemProps["checked"];
+
+export function SortDropdownMenu({ children }: { children: ReactNode }) {
+  const [showStatusBar, setShowStatusBar] = useState<Checked>(true);
+  const [showActivityBar, setShowActivityBar] = useState<Checked>(false);
+  const [showPanel, setShowPanel] = useState<Checked>(false);
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56 bg-white">
+        <DropdownMenuLabel>Ordenar por</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuCheckboxItem
+          checked={showStatusBar}
+          onCheckedChange={setShowStatusBar}
+        >
+          Recomendados
+        </DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem
+          checked={showActivityBar}
+          onCheckedChange={setShowActivityBar}
+          disabled
+        >
+          Menor precio
+        </DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem
+          checked={showPanel}
+          onCheckedChange={setShowPanel}
+        >
+          Mayor precio
+        </DropdownMenuCheckboxItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
 export function HeaderButtons() {
-  return <div className="flex items-center space-x-4">
-    <button
-      data-modal-toggle="filterModal"
-      data-modal-target="filterModal"
-      type="button"
-      className="flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-foreground hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto"
-    >
-      <div className="flex items-center gap-1">
-        <Filter className="-me-0.5 ms-2 h-4 w-4" />
-        <span>Filters</span>
-      </div>
+  return (
+    <div className="flex items-center space-x-4">
+      <Button variant="outline" className="flex gap-2 bg-white">
+        <div className="flex items-center gap-1">
+          <Filter className="size-4" />
+          <span>Filtros</span>
+        </div>
 
-      <ChevronDown className="-me-0.5 ms-2 h-4 w-4" />
-    </button>
-    <button
-      id="sortDropdownButton1"
-      data-dropdown-toggle="dropdownSort1"
-      type="button"
-      className="flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-foreground hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto"
-    >
-      <div className="flex items-center gap-1">
-        <ArrowDownAZ className="-me-0.5 ms-2 h-4 w-4" />
-        <span>Sort</span>
-      </div>
-      <ChevronDown className="-me-0.5 ms-2 h-4 w-4" />
-    </button>
-    <HiddenDropdown />
-  </div>;
+        <ChevronDown className="size-4" />
+      </Button>
+      <SortDropdownMenu>
+        <Button
+          variant="outline"
+          className="flex gap-2 bg-white sm:inline-flex"
+        >
+          <div className="flex items-center gap-1">
+            <ArrowDownAZ className="size-4" />
+            <span>Ordenar</span>
+          </div>
+          <ChevronDown className="size-4" />
+        </Button>
+      </SortDropdownMenu>
+    </div>
+  );
 }

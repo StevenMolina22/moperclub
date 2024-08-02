@@ -4,7 +4,7 @@ import { supabase } from "@/db";
 import { Card } from "@/types/cards";
 
 export async function Places() {
-  const { data, error } = await supabase.from("place").select("*");
+  const { data, error } = await supabase.from("places").select("*");
   const places = data as Card[];
 
   if (error) return null;

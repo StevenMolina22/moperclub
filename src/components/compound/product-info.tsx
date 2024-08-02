@@ -19,7 +19,7 @@ function ProductInfo({ product }: { product: TProduct }) {
         <form className="flex-auto p-6">
           <div className="flex flex-wrap">
             <h1 className="flex-auto text-xl font-semibold text-foreground">
-              {product.title}
+              {product.name}
             </h1>
             <div className="text-black-500 text-lg font-semibold">
               ${product.price}

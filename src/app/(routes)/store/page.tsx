@@ -1,29 +1,36 @@
 import { Button } from "@/components/ui/button";
-import { Breadcrumb } from "./_components/breadcrumb";
-import { FilterModal } from "./_components/filter-modal";
-import { HeaderButtons } from "./_components/header-buttons";
-import { ProductCard } from "./_components/product-card";
-import { fetcher } from "@/app/api/my-fetch";
+import { supabase } from "@/db";
 import { Product } from "@/types/products";
 import { Metadata } from "next";
+import Link from "next/link";
+import { StoreBreadcrumb } from "./_components/breadcrumb";
+import { HeaderButtons } from "./_components/header-buttons";
+import { ProductCard } from "./_components/product-card";
 
 export const metadata: Metadata = {
   title: "Store | Moperclub",
   description: "The store page",
-}
+};
 
 async function StorePage() {
-  const products: Product[] = await fetcher("/api/products");
+  const { data: products, error } = (await supabase
+    .from("products")
+    .select("*")) as {
+    data: Product[];
+    error: any;
+  };
   return (
-    <section className="py-8 antialiased md:py-12">
+    <section className="px-20 py-8 antialiased md:py-12">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
         {/* !-- Heading & Filters -->*/}
         <div className="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8">
           <div>
-            <Breadcrumb />
-            <h2 className="mt-3 text-xl font-semibold text-foreground  sm:text-2xl">
-              Products
+            <StoreBreadcrumb />
+            <h2 className="mt-3 text-xl font-semibold text-foreground sm:text-2xl">
+              Categories
             </h2>
+
+            <CategoryLinks />
           </div>
           <HeaderButtons />
         </div>
@@ -38,10 +45,25 @@ async function StorePage() {
         </div>
       </div>
 
-      {/* !-- Filter modal -->*/}
-      {/* <FilterModal /> TODO: Add interactivity (hidden now) */}
     </section>
   );
 }
 
 export default StorePage;
+
+function CategoryLinks() {
+  const categories = ["All", "Men", "Kids"];
+  return (
+    <div className="flex w-full overflow-x-auto overflow-y-hidden whitespace-nowrap border-b border-gray-200 dark:border-gray-700">
+      {categories.map((item, i) => (
+        <Link
+          key={i}
+          href=""
+          className="mr-2 p-3 underline-offset-4 hover:underline"
+        >
+          {item}
+        </Link>
+      ))}
+    </div>
+  );
+}

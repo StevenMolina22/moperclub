@@ -6,7 +6,6 @@ function StoreLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <>
       <Navbar />
-
       {children}
     </>
   );

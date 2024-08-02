@@ -1,41 +1,49 @@
-import { ChevronRight } from "lucide-react";
-import { FaHouse } from "react-icons/fa6";
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-export function Breadcrumb() {
+export function StoreBreadcrumb() {
   return (
-    <nav className="flex" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-        <li className="inline-flex items-center">
-          <a
-            href="#"
-            className="inline-flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white"
-          >
-            <FaHouse
-              className="h-5 w-5 text-gray-400 rtl:rotate-180"
-              aria-hidden="true" />
-            Home
-          </a>
-        </li>
-        <li>
-          <div className="flex items-center">
-            <ChevronRight className="h-5 w-5 text-gray-400 rtl:rotate-180" />
-            <a
-              href="#"
-              className="ms-1 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white md:ms-2"
-            >
-              Store
-            </a>
-          </div>
-        </li>
-        <li aria-current="page">
-          <div className="flex items-center">
-            <ChevronRight className="h-5 w-5 text-gray-400 rtl:rotate-180" />
-            <span className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400 md:ms-2">
-              Products
-            </span>
-          </div>
-        </li>
-      </ol>
-    </nav>
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1">
+              <BreadcrumbEllipsis className="h-4 w-4" />
+              <span className="sr-only">Toggle menu</span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-background" align="start">
+              <DropdownMenuItem>Home</DropdownMenuItem>
+              <DropdownMenuItem>About us</DropdownMenuItem>
+              <DropdownMenuItem>Contact</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/store">Store</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>Men</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
   );
 }
