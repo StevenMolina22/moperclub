@@ -1,7 +1,6 @@
 "use client";
 import useWindowWidth from "@/hooks/useWindowWidth";
 import { Card } from "@/types/cards";
-// import "swiper/css/pagination";
 import { CardCarousel } from "./card-carousel";
 import { InteractiveCard } from "./interactive-card";
 

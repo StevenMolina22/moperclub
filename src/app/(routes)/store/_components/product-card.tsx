@@ -118,7 +118,7 @@ export function ProductCard({ product }: { product: Product }) {
                 <span>More info</span>
               </div>
             </DialogTrigger>
-            <DialogContent className="flex items-center justify-center p-12">
+            <DialogContent className="flex items-center justify-center p-12 w-fit max-w-fit">
               <ProductInfo product={product} />
             </DialogContent>
           </Dialog>

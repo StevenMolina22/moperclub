@@ -1,23 +1,19 @@
 import { Product as TProduct } from "@/types/products";
-import { Button, buttonVariants } from "../ui/button";
-import { Bold, Heart, Italic, Underline } from "lucide-react";
-import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
+import { Heart } from "lucide-react";
 import Link from "next/link";
+import { Button, buttonVariants } from "../ui/button";
+import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
+import { ProductCarousel } from "./products-carousel";
 
 function ProductInfo({ product }: { product: TProduct }) {
   return (
     <div className="flex items-center justify-center">
-      <div className="flex font-sans">
-        <div className="relative w-48 flex-none">
-          <img
-            src={product.image}
-            alt=""
-            className="absolute inset-0 h-full w-full rounded-lg object-cover"
-            loading="lazy"
-          />
+      <div className="flex font-sans justify-center items-center flex-col md:flex-row">
+        <div className="w-64 ms-4 me-8 flex-none">
+         <ProductCarousel className="" images={[product.image, product.image, product.image]} />
         </div>
         <form className="flex-auto p-6">
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap flex-col">
             <h1 className="flex-auto text-xl font-semibold text-foreground">
               {product.name}
             </h1>
