@@ -8,22 +8,18 @@ import { Eye, Heart, ShoppingCart } from "lucide-react";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="dark:bg-gray-80 rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700">
+    <div className="dark:bg-gray-80 flex flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700">
       <div className="h-56 w-full">
         <a href="#">
           <img
-            className="mx-auto h-full rounded-lg dark:hidden w-full object-cover object-center"
-            src={product.image}
-            alt={product.name}
-          />
-          <img
-            className="mx-auto hidden h-full dark:block"
+            className="mx-auto h-full w-full rounded-lg object-cover object-center"
             src={product.image}
             alt={product.name}
           />
         </a>
       </div>
-      <div className="pt-6">
+      {/* body */}
+      <div className="pt-6 flex flex-col justify-between h-full">
         <div className="mb-4 flex items-center justify-between gap-4">
           <span className="me-2 rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">
             {" "}
@@ -88,24 +84,10 @@ export function ProductCard({ product }: { product: Product }) {
             ))}
           </div>
 
-          <p className="text-sm font-medium text-foreground ">{product.stars}</p>
+          <p className="text-sm font-medium text-foreground ">
+            {product.stars}
+          </p>
         </div>
-
-        {/* <ul className="mt-2 flex items-center gap-4">
-          <li className="flex items-center gap-2 text-muted-foreground">
-            <Car className="size-4" />
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-              Fast Delivery
-            </p>
-          </li>
-
-          <li className="flex items-center gap-2">
-            <Banknote className="size-4 text-muted-foreground" />
-            <p className="text-sm font-medium text-muted-foreground">
-              Best Price
-            </p>
-          </li>
-        </ul> */}
 
         <div className="mt-4 flex items-center justify-between gap-4">
           <p className="text-2xl font-extrabold leading-tight text-foreground ">
@@ -113,12 +95,17 @@ export function ProductCard({ product }: { product: Product }) {
           </p>
           <Dialog>
             <DialogTrigger>
-              <div className={cn(buttonVariants({variant: "default"}),"flex gap-2")}>
+              <div
+                className={cn(
+                  buttonVariants({ variant: "default" }),
+                  "flex gap-2",
+                )}
+              >
                 <ShoppingCart className="size-5" />
                 <span>More info</span>
               </div>
             </DialogTrigger>
-            <DialogContent className="flex items-center justify-center p-12 w-fit max-w-fit">
+            <DialogContent className="flex w-fit max-w-fit items-center justify-center p-12">
               <ProductInfo product={product} />
             </DialogContent>
           </Dialog>
