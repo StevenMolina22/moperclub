@@ -15,7 +15,7 @@ import { ReactNode, useState } from "react";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 
-export function SortDropdownMenu({ children }: { children: ReactNode }) {
+function SortDropdownMenu({ children }: { children: ReactNode }) {
   const [showStatusBar, setShowStatusBar] = useState<Checked>(true);
   const [showActivityBar, setShowActivityBar] = useState<Checked>(false);
   const [showPanel, setShowPanel] = useState<Checked>(false);
@@ -49,9 +49,45 @@ export function SortDropdownMenu({ children }: { children: ReactNode }) {
     </DropdownMenu>
   );
 }
+
+function FilterDropdownMenu({ children }: { children: ReactNode }) {
+  const [showStatusBar, setShowStatusBar] = useState<Checked>(true);
+  const [showActivityBar, setShowActivityBar] = useState<Checked>(false);
+  const [showPanel, setShowPanel] = useState<Checked>(false);
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56 bg-white">
+        <DropdownMenuLabel>Filtros</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuCheckboxItem
+          checked={showStatusBar}
+          onCheckedChange={setShowStatusBar}
+        >
+          Recomendados
+        </DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem
+          checked={showActivityBar}
+          onCheckedChange={setShowActivityBar}
+          disabled
+        >
+          Menor precio
+        </DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem
+          checked={showPanel}
+          onCheckedChange={setShowPanel}
+        >
+          Mayor precio
+        </DropdownMenuCheckboxItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
 export function HeaderButtons() {
   return (
     <div className="flex items-center space-x-4">
+      <FilterDropdownMenu>
       <Button variant="outline" className="flex gap-2 bg-white">
         <div className="flex items-center gap-1">
           <Filter className="size-4" />
@@ -60,6 +96,7 @@ export function HeaderButtons() {
 
         <ChevronDown className="size-4" />
       </Button>
+      </FilterDropdownMenu>
       <SortDropdownMenu>
         <Button
           variant="outline"
