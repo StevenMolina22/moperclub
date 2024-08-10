@@ -19,7 +19,7 @@ export function ProductCard({ product }: { product: Product }) {
         </a>
       </div>
       {/* body */}
-      <div className="pt-6 flex flex-col justify-between h-full">
+      <div className="flex h-full flex-col justify-between pt-6">
         <div className="mb-4 flex items-center justify-between gap-4">
           <span className="me-2 rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">
             {" "}
@@ -27,24 +27,6 @@ export function ProductCard({ product }: { product: Product }) {
           </span>
 
           <div className="flex items-center justify-end gap-1">
-            <button
-              type="button"
-              data-tooltip-target="tooltip-quick-look"
-              className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-foreground dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            >
-              <span className="sr-only"> Quick look </span>
-              <Eye className="size-5" />
-            </button>
-            <div
-              id="tooltip-quick-look"
-              role="tooltip"
-              className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-              data-popper-placement="top"
-            >
-              Quick look
-              <div className="tooltip-arrow" data-popper-arrow=""></div>
-            </div>
-
             <button
               type="button"
               data-tooltip-target="tooltip-add-to-favorites"
