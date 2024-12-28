@@ -9,7 +9,5 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const data = await fetch(API_URL + "/places");
-  const places: DBPlace[] = await data.json();
-  console.log("Hello from places ", places);
-  return places;
+  return data;
 }
