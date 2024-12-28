@@ -2,13 +2,11 @@ import { VerticalCardsGallery } from "@/components/compound/cards-gallery";
 import { ContentDarkWrapper } from "@/components/layout/dark-wrapper";
 import { supabase } from "@/db";
 import { Card } from "@/types/cards";
+import { API_URL } from "@/utils/envs";
 
 export async function Events() {
-  const { data: events, error } = (await supabase.from("events").select("*")) as {
-    data: Card[];
-    error: any;
-  };
-  if (error) return null;
+  const data = await fetch(API_URL + "/events");
+  const events: Card[] = (await data.json()) ?? [];
 
   return (
     <ContentDarkWrapper

@@ -1,7 +1,15 @@
 import { supabase } from "@/db";
+import { API_URL } from "@/utils/envs";
 import { NextResponse } from "next/server";
 
+// export async function GET() {
+//   const { data, error } = await supabase.from("places").select("*");
+//   return NextResponse.json(data);
+// }
+
 export async function GET() {
-  const { data, error } = await supabase.from("places").select("*");
-  return NextResponse.json(data);
+  const data = await fetch(API_URL + "/places");
+  const places: DBPlace[] = await data.json();
+  console.log("Hello from places ", places);
+  return places;
 }
