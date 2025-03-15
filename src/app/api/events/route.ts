@@ -1,8 +1,9 @@
 import { supabase } from "@/db";
 import { API_URL } from "@/utils/envs";
 import { NextResponse } from "next/server";
+import { fetcher } from "@/app/api/my-fetch";
 
 export async function GET() {
-  const data = await fetch(API_URL + "/events");
-  return data;
+  const events = await fetcher("/events");
+  return NextResponse.json(events);
 }
