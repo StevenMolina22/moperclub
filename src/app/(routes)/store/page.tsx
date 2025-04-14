@@ -1,7 +1,6 @@
-import { supabase } from "@/db";
-import { Product } from "@/types/products";
 import { Metadata } from "next";
 import { ProductCard } from "./_components/product-card";
+import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Store | Moperclub",
@@ -18,25 +17,18 @@ async function takesTime() {
 
 async function StorePage() {
   // await takesTime();
-  const { data: products, error } = (await supabase
-    .from("products")
-    .select("*")) as {
-    data: Product[];
-    error: any;
-  };
   return (
-      <>
-        {/* Products gallery */}
-        <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4 ">
-          {products?.map((product, i) => (
-            <ProductCard key={i} product={product} />
-          ))}
-        </div>
-        {/* <div className="w-full text-center">
+    <>
+      {/* Products gallery */}
+      <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4 ">
+        {products?.map((product, i) => (
+          <ProductCard key={i} product={product} />
+        ))}
+      </div>
+      {/* <div className="w-full text-center">
           <Button variant="outline">See more</Button>
         </div> */}
-      </>
-
+    </>
   );
 }
 
